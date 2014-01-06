@@ -1,65 +1,64 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
     tools:context=".MainActivity" >
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:id="@+id/imageView1"
-        android:layout_width="500dp"
-        android:layout_height="410dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/background_not_complete" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_not_complete"
+        android:scaleType="centerCrop"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="106dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:text="Rose-Hulman Alumni Perks Application"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:background="@color/text_gray"
+            android:ems="10"
+            android:hint="Username" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:background="@color/text_gray"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/button1"
         android:layout_width="170dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/imageView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
+        android:layout_margin="23dp"
+        android:layout_gravity="center"
         android:background="@color/almost_white"
         android:text="Log in" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="106dp"
-        android:text="Rose-Hulman Alumni Perks Application"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:background="@color/text_gray"
-        android:hint="Username"
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="54dp"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText1"
-        android:layout_marginTop="35dp"
-        android:background="@color/text_gray"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword" />
-
-</RelativeLayout>
+</LinearLayout>
