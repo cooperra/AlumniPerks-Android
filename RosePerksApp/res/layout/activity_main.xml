@@ -59,6 +59,7 @@
         android:layout_margin="23dp"
         android:layout_gravity="center"
         android:background="@color/almost_white"
+        android:onClick="onLoginButtonClick"
         android:text="Log in" />
 
 </LinearLayout>
