@@ -1,11 +1,16 @@
 package com.example.roseperksapp;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends Activity {
+
+	public static final String EXTRA_EMAIL = "com.example.roseperksapp.EMAIL";
+	public static final String EXTRA_PASSWORD = "com.example.roseperksapp.PASSWORD";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +27,19 @@ public class MainActivity extends Activity {
 	
 	public void onLoginButtonClick(View button) {
 		// TODO: login here
-		//button.setEnabled(false);
+
+		Intent intent = new Intent(this, CategoryMenuActivity.class);
+		
+//		EditText emailEditText = (EditText) findViewById(R.id.editText1);
+//	    String email = emailEditText.getText().toString();
+//	    
+//	    EditText passwordEditText = (EditText) findViewById(R.id.editText2);
+//	    String password = passwordEditText.getText().toString();
+//	    
+//	    intent.putExtra(EXTRA_EMAIL, email);
+//	    intent.putExtra(EXTRA_PASSWORD, password);
+	    
+	    startActivity(intent);
 	}
 
 }
