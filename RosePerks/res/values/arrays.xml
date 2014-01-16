@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="food_stores_names">
+        <item>KFC</item>
+        <item>Taco Bells</item>
+        <item>Fridays</item>
+        <item>Red Lobster</item>
+        <item>Starbucks</item>
+        <item>Subway</item>
+        <item>Royal Mandarine</item>
+        <item>Tenpenyaki</item>
+        <item>Tokyo</item>
+        <item>Lan zhou niu rou la mian</item>
+        <item>Fat duck</item>
+        <item>Dining Hall</item>
+        
+    </string-array>
+    
+</resources>
