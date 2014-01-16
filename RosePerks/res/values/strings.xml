@@ -10,5 +10,12 @@
     <string name="title_activity_main_screen">MainScreenActivity</string>
     <string name="title_activity_perks_list">PerksListActivity</string>
     <string name="add_view_button">Add View</string>
+    <string name="category_string">Category</string>
+    <string name="google_map_string">Google Maps</string>
+    <string name="help_string">Help</string>
+    <string name="perks_list_string">Perks List</string>
+    <string name="help_message">We will implement how to help the user out later on in the process.</string>
+    <string name="ok">OK</string>
+    <string name="help_title">Need Assistance?</string>
 
 </resources>

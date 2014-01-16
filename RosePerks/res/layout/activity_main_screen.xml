@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/RoseColor" >
 
     <TableRow
-        android:id="@+id/TableRow01"
+        android:id="@+id/top_Row"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/Button02"
+            android:id="@+id/category"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Catagory" />
+            android:text="@string/category_string" />
 
         <Button
-            android:id="@+id/Button01"
+            android:id="@+id/perks_List"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Perks List" />
+            android:text="@string/perks_list_string" />
     </TableRow>
 
     <TableRow
-        android:id="@+id/tableRow1"
+        android:id="@+id/bottom_row"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/help"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Help" />
+            android:text="@string/help_string" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/google_Map"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Google Map" />
+            android:text="@string/google_map_string" />
     </TableRow>
 
 </TableLayout>

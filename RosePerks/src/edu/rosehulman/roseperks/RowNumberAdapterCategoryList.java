@@ -5,16 +5,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-public class RowNumberAdapter extends BaseAdapter {
+public class RowNumberAdapterCategoryList extends BaseAdapter {
+
 	private Context mContext;
 	private int mCount;
 	private String[] mMonthNames;
 
-	public RowNumberAdapter(Context context) {
+	public RowNumberAdapterCategoryList(Context context) {
 		mContext = context;
 		mCount = 10;
 		mMonthNames = context.getResources().getStringArray(
-				R.array.food_stores_names);
+				R.array.category_types);
 	}
 
 	@Override
@@ -57,4 +58,5 @@ public class RowNumberAdapter extends BaseAdapter {
 	public void addView() {
 		this.mCount++;
 	}
+
 }
