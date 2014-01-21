@@ -1,17 +1,15 @@
 package edu.rosehulman.roseperks;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainScreenActivity extends Activity {
+public class MainScreenActivity extends FragmentActivity {
 	private Button PerksList;
 	private Button Help;
 	private Button Category;
@@ -46,21 +44,9 @@ public class MainScreenActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+				DialogFragment dialog = new DialogFragmentHelp();
+				dialog.show(getSupportFragmentManager(), "help");
 
-				builder.setMessage(R.string.help_message).setTitle(R.string.help_title);
-				AlertDialog dialog = builder.create();
-				
-				builder.setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
-					
-					public void onClick(DialogInterface dialog, int which) {
-						dialog.dismiss();
-						
-					}
-
-
-				});
-				
 			}
 		});
 	}

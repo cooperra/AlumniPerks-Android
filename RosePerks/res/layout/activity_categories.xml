@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+    
+    <TableRow
+        android:id="@+id/top_row_Category"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/restaurant_cat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:text="@string/restaurant" 
+            android:textSize="16sp"
+            android:background="@drawable/restaurant"
+            />
+
+        <Button
+            android:id="@+id/hotel_cat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:text="@string/hotel" 
+            android:background="@drawable/hotel"
+           />
+        
+        <Button
+            android:id="@+id/entertainment_cat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:text="@string/entertainment"
+            android:background="@drawable/entertainment"
+             />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/bottom_row_category"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <Button
+            android:id="@+id/bars_pubs_cat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:text="@string/bars_pubs"
+            android:background="@drawable/bars"
+             />
+
+        <Button
+            android:id="@+id/stores_cat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:text="@string/stores"
+            android:background="@drawable/stores"
+            />
+        <Button
+            android:id="@+id/other_cat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:text="@string/other"
+            android:background="@drawable/other"
+             />
+    </TableRow>
+
+</TableLayout>

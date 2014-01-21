@@ -17,5 +17,12 @@
     <string name="help_message">We will implement how to help the user out later on in the process.</string>
     <string name="ok">OK</string>
     <string name="help_title">Need Assistance?</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="hotel">Hotel</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="bars_pubs">Bar&amp;Pubs</string>
+    <string name="stores">Stores</string>
+    <string name="other">Other</string>
+    <string name="title_activity_categories">CategoryActivity</string>
 
 </resources>
