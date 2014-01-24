@@ -28,11 +28,13 @@
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.PerksListActivity"
-            android:label="@string/title_activity_perks_list" >
+            android:label="@string/title_activity_perks_list"
+            android:parentActivityName="edu.rosehulman.roseperks.MainScreenActivity" >
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.CategoryListActivity"
-            android:label="@string/title_activity_categories" >
+            android:label="@string/title_activity_categories"
+            android:parentActivityName="edu.rosehulman.roseperks.MainScreenActivity" >
         </activity>
     </application>
 
