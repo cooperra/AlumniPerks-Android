@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <string-array name="food_stores_names">
         <item>KFC</item>
         <item>Taco Bells</item>
@@ -15,13 +15,14 @@
         <item>Dining Hall</item>
         
     </string-array>
-    <string-array name="category_types">
-        <item >Restaurant</item>
-        <item >Hotels</item>
-        <item >Entertainment</item>
-        <item >Bars/Pubs</item>
-        <item >Stores</item>
-        <item >Miscellaneous</item>
-    </string-array>
+<string-array android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/stringarray1" name="entertainment_names">
+    <item android:id="@+id/item1" android:layout_height="wrap_content" android:layout_width="wrap_content">GameStop</item>
+</string-array>
+<string-array android:id="@+id/stringarray1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="bars_clubs_names">
+    <item android:id="@+id/item1" android:layout_width="wrap_content" android:layout_height="wrap_content">Terminal</item>
+</string-array>
+<string-array android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/stringarray1" name="stores_names">
+    <item android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/item1">GreaseMonkey</item>
+</string-array>
     
 </resources>

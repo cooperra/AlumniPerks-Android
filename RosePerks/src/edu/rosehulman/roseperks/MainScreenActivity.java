@@ -8,11 +8,13 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.net.Uri;
 
 public class MainScreenActivity extends FragmentActivity {
 	private Button PerksList;
 	private Button Help;
 	private Button Category;
+	private Button Google_Maps;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class MainScreenActivity extends FragmentActivity {
 		PerksList = (Button) findViewById(R.id.perks_List);
 		Help = (Button) findViewById(R.id.help);
 		Category = (Button) findViewById(R.id.category);
+		Google_Maps = (Button) findViewById(R.id.google_Map);
 		Category.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -36,7 +39,7 @@ public class MainScreenActivity extends FragmentActivity {
 			@Override
 			public void onClick(View v) {
 				Intent DetailView = new Intent(getApplicationContext(),
-						PerksListActivity.class);
+						PerksListView.class);
 				startActivity(DetailView);
 			}
 		});
@@ -47,6 +50,16 @@ public class MainScreenActivity extends FragmentActivity {
 				DialogFragment dialog = new DialogFragmentHelp();
 				dialog.show(getSupportFragmentManager(), "help");
 
+			}
+		});
+		Google_Maps.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent browserIntent =  
+						new Intent(Intent.ACTION_VIEW, Uri.parse("https://maps.google.com/"));
+				startActivity(browserIntent);
+				
 			}
 		});
 	}
