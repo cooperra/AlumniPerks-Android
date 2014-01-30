@@ -20,11 +20,11 @@ public class PerkDataHelper extends SQLiteOpenHelper {
 	// Database creation sql statement
 	private static final String DATABASE_CREATE = "create table "
 			+ TABLE_NAME
-			+ "(" +  COLUMN_ID + " integer primary key autoincrement"
-			+ ", " + COLUMN_COMPANY_NAME + "text not null"
-			+ ", " + COLUMN_ADDRESS + "text not null"
-			+ ", " + COLUMN_PHONE + "text not null"
-			+ ", " + COLUMN_DESCRIPTION + "text not null"
+			+ " (" +  COLUMN_ID + " integer primary key autoincrement"
+			+ ", " + COLUMN_COMPANY_NAME + " text not null"
+			+ ", " + COLUMN_ADDRESS + " text not null"
+			+ ", " + COLUMN_PHONE + " text not null"
+			+ ", " + COLUMN_DESCRIPTION + " text not null"
 			+ ");";
 
 	public PerkDataHelper(Context context) {
@@ -45,16 +45,16 @@ public class PerkDataHelper extends SQLiteOpenHelper {
 	 * @param database 
 	 */
 	private void populateSampleData(SQLiteDatabase database) {
-		database.execSQL("INSERT INTO " + TABLE_NAME + "("
+		database.execSQL("INSERT INTO " + TABLE_NAME + " ("
 				+ COLUMN_COMPANY_NAME + "," + COLUMN_ADDRESS + "," + COLUMN_PHONE + "," + COLUMN_DESCRIPTION
 				+ ") VALUES ("
 				+ "'Caboodle Cupcakes', '3419 S. 7th Street Terre Haute, IN 47802', '(812) 232-5551', 'Free cup of coffee with the purchase of one or more cupcakes'"
-				+")");
-		database.execSQL("INSERT INTO " + TABLE_NAME + "("
+				+");");
+		database.execSQL("INSERT INTO " + TABLE_NAME + " ("
 				+ COLUMN_COMPANY_NAME + "," + COLUMN_ADDRESS + "," + COLUMN_PHONE + "," + COLUMN_DESCRIPTION
 				+ ") VALUES ("
 				+ "'Candlewood Suites', '721 Wabash Ave. Terre Haute, IN 47807', '(812) 234-3400', 'Room rate of $89.99 or 20% off of blackout rate'"
-				+")");
+				+");");
 	}
 
 	@Override
