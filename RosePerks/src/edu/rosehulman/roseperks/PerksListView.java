@@ -16,8 +16,11 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
-import android.app.Activity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -25,47 +28,40 @@ import android.widget.ListView;
 
 public class PerksListView extends Activity {
 //	static final String URL = "companylist.xml";
+	static final String KEY_TAG = "company";
 	static final String KEY_NAME = "name";
 	static final String KEY_ID = "id";
 	static final String KEY_LOCATION = "location";
 	static final String KEY_NUMBER = "number";
 	static final String KEY_DISCOUNT = "discount";
-	static final String KEY_NAME_IMAGE = "name image";
+	static final String KEY_NAME_IMAGE = "name_image";
 	
 	ListView list;
 	PerksAdapter adapter;
+	List<HashMap<String,String>> perksListCollection;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perks_list_items);
-        DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder docBuilder = null;
-		try {
-			docBuilder = docBuilderFactory.newDocumentBuilder();
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        Document doc = null;
-		try {
-			doc = docBuilder.parse (getAssets().open("companyList.xml"));
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
         
-        List<HashMap<String,String>> perksListCollection = new ArrayList<HashMap<String,String>>();
+		try {
+        
+        DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+        Document doc = docBuilder.parse (getAssets().open("companyList.xml"));
+        
+        perksListCollection = new ArrayList<HashMap<String,String>>();
         
         doc.getDocumentElement().normalize();
         
-        NodeList perksList = doc.getElementsByTagName("companyData");
+        NodeList perksList = doc.getElementsByTagName("company");
+        
+        HashMap<String, String> map = null;
         
         for (int i = 0 ; i < perksList.getLength(); i++){
-        	HashMap<String, String> map = new HashMap<String, String>();
+        	
+        	map = new HashMap<String,String>();
         	
         	Node firstPerksNode = perksList.item(i);
         	
@@ -115,10 +111,30 @@ public class PerksListView extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View v, int position,
 					long id) {
-				// TODO Auto-generated method stub
-				
+		        Intent i = new Intent();
+		        i.setClass(PerksListView.this, PerksAdapter.class);
+		        i.putExtra("position", String.valueOf(position + 1));
+		        i.putExtra("name", perksListCollection.get(position).get(KEY_NAME));
+		        i.putExtra("location", perksListCollection.get(position).get(KEY_LOCATION));
+		        i.putExtra("number", perksListCollection.get(position).get(KEY_NUMBER));
+		        i.putExtra("discount", perksListCollection.get(position).get(KEY_DISCOUNT));
+		        i.putExtra("name_image", perksListCollection.get(position).get(KEY_NAME_IMAGE));
+		        startActivity(i);
 			}
         	
 		});
+	}
+		catch (IOException ex) {
+			Log.e("Error", ex.getMessage());
+		}
+		catch (Exception ex) {
+			Log.e("Error", "Loading exception");
+		}
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu){
+		getMenuInflater().inflate(R.menu.main_screen, menu);
+		return true;
 	}
 }

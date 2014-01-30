@@ -3,7 +3,6 @@ package edu.rosehulman.roseperks;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -16,30 +15,38 @@ import android.widget.TextView;
 
 public class PerksAdapter extends BaseAdapter {
 	
-	private Activity activity;
-	private List<HashMap<String, String>> data;
-	private static LayoutInflater inflater = null;
-	public ImageLoader imageLoader;
+	static final String KEY_TAG = "company";
+	static final String KEY_ID = "id";
+	static final String KEY_NAME = "name";
+	static final String KEY_LOCATION = "location";
+	static final String KEY_NUMBER = "number";
+	static final String KEY_DISCOUNT = "discount";
+	static final String KEY_NAME_IMAGE = "name_image";
+	LayoutInflater inflater;
+	ImageView imagePerk;
+	List<HashMap<String,String>> perkListCollection;
+	ViewHolder holder;
 	
+	public PerksAdapter(){
+		
+	}
 	public PerksAdapter(Activity a, List<HashMap<String, String>> d){
-		activity = a;
-		data = d;
-		inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		imageLoader = new ImageLoader(activity.getApplicationContext());
+		this.perkListCollection = d;
+		inflater = (LayoutInflater)a.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
 	@Override
 	public int getCount() {
-		return data.size();
+		return this.perkListCollection.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return position;
+		return null;
 	}
 
 	@Override
 	public long getItemId(int position) {
-		return position;
+		return 0;
 	}
 
 	@Override
@@ -48,27 +55,40 @@ public class PerksAdapter extends BaseAdapter {
 		View vi = convertView;
 		if(convertView == null){
 			vi = inflater.inflate(R.layout.activity_perks_list, null);
+			holder = new ViewHolder();
+			holder.tvname = (TextView)vi.findViewById(R.id.name);
+			holder.tvlocation = (TextView)vi.findViewById(R.id.location);
+			holder.tvnumber = (TextView)vi.findViewById(R.id.number);
+			holder.tvdiscount = (TextView)vi.findViewById(R.id.discount);
+			holder.tvName_image = (ImageView)vi.findViewById(R.id.name_image);
+		
+			vi.setTag(holder);
+		} else {
+			holder = (ViewHolder)vi.getTag();
 		}
-		TextView name = (TextView)vi.findViewById(R.id.name);
-		TextView location = (TextView)vi.findViewById(R.id.location);
-		TextView number = (TextView)vi.findViewById(R.id.number);
-		TextView discount = (TextView)vi.findViewById(R.id.discount);
-		ImageView name_image = (ImageView)vi.findViewById(R.id.name_image);
+		//Setting up the values of Text
+		holder.tvname.setText(perkListCollection.get(position).get(KEY_NAME));
+		holder.tvlocation.setText(perkListCollection.get(position).get(KEY_LOCATION));
+		holder.tvnumber.setText(perkListCollection.get(position).get(KEY_NUMBER));
+		holder.tvdiscount.setText(perkListCollection.get(position).get(KEY_DISCOUNT));
 		
-		HashMap<String, String> company = new HashMap<String, String>();
-		company = data.get(position);
-		
-		name.setText(company.get(PerksListView.KEY_NAME));
-		location.setText(company.get(PerksListView.KEY_LOCATION));
-		number.setText(company.get(PerksListView.KEY_NUMBER));
-		discount.setText(company.get(PerksListView.KEY_DISCOUNT));
-		String uri = "drawable/"+ data.get(position).get(PerksListView.KEY_NAME_IMAGE);
-		//Making the image
+		//Setting up the image
+		String uri = "drawable/"+ perkListCollection.get(position).get(KEY_NAME_IMAGE);
 		int imageResource = vi.getContext().getApplicationContext().getResources().getIdentifier(
 		   uri, null, vi.getContext().getApplicationContext().getPackageName());
 		Drawable image = vi.getContext().getResources().getDrawable(imageResource);
-		name_image.setImageDrawable(image);
+		holder.tvName_image.setImageDrawable(image);
 		return vi;
 	}
-
+	
+	static class ViewHolder{
+		TextView tvname;
+		TextView tvlocation;
+		TextView tvnumber;
+		TextView tvdiscount;
+		ImageView tvName_image;
+	}
+	
 }
+
+

@@ -1,115 +1,103 @@
 package edu.rosehulman.roseperks;
 
-import java.io.IOException;
-import java.io.StringReader;
-import java.io.UnsupportedEncodingException;
- 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
- 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
+import java.util.ArrayList;
+import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
- 
-import android.util.Log;
- 
-public class XMLParser {
- 
-    // constructor
-    public XMLParser() {
- 
-    }
- 
-    /**
-     * Getting XML from URL making HTTP request
-     * @param url string
-     * */
-    public String getXmlFromUrl(String url) {
-        String xml = null;
- 
-        try {
-            // defaultHttpClient
-            DefaultHttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost(url);
- 
-            HttpResponse httpResponse = httpClient.execute(httpPost);
-            HttpEntity httpEntity = httpResponse.getEntity();
-            xml = EntityUtils.toString(httpEntity);
- 
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        // return XML
-        return xml;
-    }
- 
-    /**
-     * Getting XML DOM element
-     * @param XML string
-     * */
-    public Document getDomElement(String xml){
-        Document doc = null;
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        try {
- 
-            DocumentBuilder db = dbf.newDocumentBuilder();
- 
-            InputSource is = new InputSource();
-                is.setCharacterStream(new StringReader(xml));
-                doc = db.parse(is);
- 
-            } catch (ParserConfigurationException e) {
-                Log.e("Error: ", e.getMessage());
-                return null;
-            } catch (SAXException e) {
-                Log.e("Error: ", e.getMessage());
-                return null;
-            } catch (IOException e) {
-                Log.e("Error: ", e.getMessage());
-                return null;
-            }
- 
-            return doc;
-    }
- 
-    /** Getting node value
-      * @param elem element
-      */
-     public final String getElementValue( Node elem ) {
-         Node child;
-         if( elem != null){
-             if (elem.hasChildNodes()){
-                 for( child = elem.getFirstChild(); child != null; child = child.getNextSibling() ){
-                     if( child.getNodeType() == Node.TEXT_NODE  ){
-                         return child.getNodeValue();
-                     }
-                 }
-             }
-         }
-         return "";
-     }
- 
-     /**
-      * Getting node value
-      * @param Element node
-      * @param key string
-      * */
-     public String getValue(Element item, String str) {
-            NodeList n = item.getElementsByTagName(str);
-            return this.getElementValue(n.item(0));
-        }
+import org.xml.sax.helpers.DefaultHandler;
+
+/*
+ * Default Notification handler class for receiving ContentHandler
+ * events raised by the SAX Parser
+ * 
+ * */
+public class XMLParser extends DefaultHandler {
+
+	ArrayList<String> idlist = new ArrayList<String>();
+	ArrayList<String> namelist = new ArrayList<String>();
+	ArrayList<String> locationlist = new ArrayList<String>();
+	ArrayList<String> numberlist = new ArrayList<String>();
+	ArrayList<String> discountlist = new ArrayList<String>();
+	ArrayList<String> name_imagelist = new ArrayList<String>();
+	
+	//temp variable to store the data chunk read while parsing 
+	private String tempStore	=	null;
+		
+	public XMLParser() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	/*
+	 * Clears the tempStore variable on every start of the element
+	 * notification
+	 * 
+	 * */
+	public void startElement (String uri, String localName, String qName,
+			   Attributes attributes) throws SAXException {
+	
+		super.startElement(uri, localName, qName, attributes);
+		
+		if (localName.equalsIgnoreCase("id")) {
+			tempStore = "";
+		} else if (localName.equalsIgnoreCase("name")) {
+			tempStore = "";
+		} 
+		else if (localName.equalsIgnoreCase("location")) {
+			tempStore = "";
+		}
+		else if (localName.equalsIgnoreCase("number")) {
+			tempStore = "";
+		}
+		else if (localName.equalsIgnoreCase("discount")) {
+			tempStore = "";
+		}
+		else if (localName.equalsIgnoreCase("name_image")) {
+			tempStore = "";
+		}
+		else {
+			tempStore = "";
+		}
+	}
+	
+	/*
+	 * updates the value of the tempStore variable into
+	 * corresponding list on receiving end of the element
+	 * notification
+	 * */
+	public void endElement(String uri, String localName, String qName)
+			throws SAXException {
+		super.endElement(uri, localName, qName);
+		
+		if (localName.equalsIgnoreCase("id")) {
+			idlist.add(tempStore);
+		} 
+		else if (localName.equalsIgnoreCase("name")) {
+			namelist.add(tempStore);
+		}
+		else if (localName.equalsIgnoreCase("location")) {
+			locationlist.add(tempStore);
+		}
+		else if (localName.equalsIgnoreCase("number")) {
+			numberlist.add(tempStore);
+		}
+		else if (localName.equalsIgnoreCase("discount")) {
+			discountlist.add(tempStore);
+		}
+		else if (localName.equalsIgnoreCase("name_image")) {
+			name_imagelist.add(tempStore);
+		}
+		
+		tempStore = "";
+	}
+	
+	/*
+	 * adds the incoming data chunk of character data to the 
+	 * temp data variable - tempStore
+	 * 
+	 * */
+	public void characters(char[] ch, int start, int length)
+			throws SAXException {
+		super.characters(ch, start, length);
+		tempStore += new String(ch, start, length);
+	}
+
 }
