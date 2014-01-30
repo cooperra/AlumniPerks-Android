@@ -6,6 +6,7 @@
         <location>3419 S. 7th Street Terre Haute, IN 47802</location>
         <number>(812) 232-5551</number>
         <discount>Free cup of coffee with the purchase of one or more cupcakes</discount>
+		<name_image>caboodle_cupcakes</name_image>
     </company>
     <company>
         <id>2</id>
@@ -13,5 +14,6 @@
         <location>721 Wabash Ave. Terre Haute, IN 47807</location>
         <number>(812) 234-3400</number>
         <discount>Room rate of $89.99 or 20% off of blackout rate</discount>
+        <name_image>candlewood</name_image>
     </company>
 </companyList>
