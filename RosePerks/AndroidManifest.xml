@@ -34,6 +34,13 @@
             android:name="edu.rosehulman.roseperks.CategoryListActivity"
             android:label="@string/title_activity_categories" >
         </activity>
+        <activity
+            android:name="edu.rosehulman.roseperks.TestDatabaseActivity" >
+            <intent-filter>
+    			<action android:name="android.intent.action.MAIN" />
+    			<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+    	</activity>
     </application>
     
     <uses-permission android:name="android.permission.INTERNET"/>
