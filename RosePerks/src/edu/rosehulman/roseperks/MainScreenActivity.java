@@ -20,10 +20,10 @@ public class MainScreenActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_screen);
-		PerksList = (Button) findViewById(R.id.perks_List);
+		PerksList = (Button) findViewById(R.id.perks);
 		Help = (Button) findViewById(R.id.help);
 		Category = (Button) findViewById(R.id.category);
-		Google_Maps = (Button) findViewById(R.id.google_Map);
+		Google_Maps = (Button) findViewById(R.id.google_map);
 		Category.setOnClickListener(new OnClickListener() {
 			
 			@Override

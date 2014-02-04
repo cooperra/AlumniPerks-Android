@@ -1,53 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/RoseColor" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="horizontal" >
 
-    <TableRow
-        android:id="@+id/top_Row"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        >
 
         <Button
-            android:id="@+id/category"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:layout_weight="1"
+            android:id = "@+id/category"
+            style="@style/lightboxButton.Blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="@string/category_string" />
 
         <Button
-            android:id="@+id/perks_List"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:layout_weight="1"
+            android:id = "@+id/perks"
+            style="@style/lightboxButton.Green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="@string/perks_list_string" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/bottom_row"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
 
         <Button
-            android:id="@+id/help"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:layout_weight="1"
+            android:id = "@+id/help"
+            style="@style/lightboxButton.Grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="@string/help_string" />
 
         <Button
-            android:id="@+id/google_Map"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:layout_weight="1"
+            android:id = "@+id/google_map"
+            style="@style/lightboxButton.Blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:enabled="false"
             android:text="@string/google_map_string" />
-    </TableRow>
-
-</TableLayout>
+	
+       </LinearLayout>
+</LinearLayout>

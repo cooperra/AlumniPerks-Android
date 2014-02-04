@@ -16,5 +16,29 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    <style name="lightboxButton">
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:paddingRight">30dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:textColor">@color/btn_text_normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#75000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">-1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="lightboxButton.Blue">
+        <item name="android:background">@drawable/btn_category</item>
+    </style>
+
+    <style name="lightboxButton.Green">
+        <item name="android:background">@drawable/btn_perks</item>
+    </style>
+
+    <style name="lightboxButton.Grey">
+        <item name="android:background">@drawable/btn_help</item>
+    </style>
 
 </resources>
