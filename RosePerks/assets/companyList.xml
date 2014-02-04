@@ -42,10 +42,10 @@
     </company>
         <company>
         <id>6</id>
-        <name>Comfort Inn & Suites-Plainfield</name>
+        <name>Comfort Inn &amp; Suites-Plainfield</name>
         <location>6107 Cambridge Way Plainfield, IN 46168</location>
         <number>(317) 839-9600</number>
-        <discount>Discounted rate of $65 plus tax; Stay, Park & Fly $75 plus tax</discount>
+        <discount>Discounted rate of $65 plus tax; Stay, Park &amp; Fly $75 plus tax</discount>
 		<name_image>comfort_inn</name_image>
     </company>
     <company>
@@ -66,7 +66,7 @@
     </company>
     <company>
         <id>9</id>
-        <name>Firestone Tire & Service Center</name>
+        <name>Firestone Tire &amp; Service Center</name>
         <location>940 Wabash Avenue Terre Haute, IN 47807</location>
         <number>(812) 232-9478</number>
         <discount>coupon</discount>
@@ -106,7 +106,7 @@
     </company>
     <company>
         <id>14</id>
-        <name>Holiday Inn Express & Suites</name>
+        <name>Holiday Inn Express &amp; Suites</name>
         <location>2645 S. Joe Fox Street Terre Haute, IN 47803</location>
         <number>(812) 234-3200</number>
         <discount>N/A</discount>
@@ -122,7 +122,7 @@
     </company>
     <company>
         <id>16</id>
-        <name>Indy Park Ride & Fly</name>
+        <name>Indy Park Ride &amp; Fly</name>
         <location>3875 Plainfield Road Indianapolis, IN 46231</location>
         <number>(317) 486-8000</number>
         <discount>see flyer..</discount>
@@ -138,10 +138,10 @@
     </company>
     <company>
         <id>18</id>
-        <name>LaQuinta Inns & Suites-Plainfield</name>
+        <name>LaQuinta Inns &amp; Suites-Plainfield</name>
         <location>2251 Manchester Drive Plainfield, IN 46168</location>
         <number>(317) 279-2650</number>
-        <discount>Discounted rate of $75 plus tax; Stay. Park & Fly $85 plus tax</discount>
+        <discount>Discounted rate of $75 plus tax; Stay. Park &amp; Fly $85 plus tax</discount>
 		<name_image>laquinta_inn</name_image>
     </company>     
     <company>
@@ -202,7 +202,7 @@
     </company>      
     <company>
         <id>26</id>
-        <name>Rick's Smokehouse & Grill, LLC </name>
+        <name>Rick's Smokehouse &amp; Grill, LLC </name>
         <location>3102 Wabash Avenue Terre Haute, IN 47803</location>
         <number>(812) 235-8335</number>
         <discount>Free extra side with purchase of entrée or combo</discount>
@@ -210,10 +210,10 @@
     </company>  
     <company>
         <id>27</id>
-        <name>7 & 70 Liquor & World of Wines </name>
+        <name>7 &amp; 70 Liquor &amp; World of Wines </name>
         <location>3305 S. 7th Street Terre Haute, IN 47802</location>
         <number>(812) 232-3003</number>
-        <discount>10% in 1/2 case & 15% on case of wine</discount>
+        <discount>10% in 1/2 case &amp; 15% on case of wine</discount>
 		<name_image>seventhandseven</name_image>
     </company>        
     <company>
