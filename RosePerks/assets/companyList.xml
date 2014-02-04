@@ -142,7 +142,7 @@
         <location>2251 Manchester Drive Plainfield, IN 46168</location>
         <number>(317) 279-2650</number>
         <discount>Discounted rate of $75 plus tax; Stay. Park & Fly $85 plus tax</discount>
-		<name_image>laquitna_inn</name_image>
+		<name_image>laquinta_inn</name_image>
     </company>     
     <company>
         <id>19</id>
@@ -182,7 +182,7 @@
         <location>3040 Wabash Avenue Terre Haute, IN 47803</location>
         <number>(812) 232-6231</number>
         <discount>N/A</discount>
-		<name_image>pizza_hul</name_image>
+		<name_image>pizza_hut</name_image>
     </company>     
     <company>
         <id>24</id>
