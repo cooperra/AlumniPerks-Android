@@ -18,6 +18,7 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -35,6 +36,7 @@ public class PerksListView extends Activity {
 	static final String KEY_NUMBER = "number";
 	static final String KEY_DISCOUNT = "discount";
 	static final String KEY_NAME_IMAGE = "name_image";
+	static final String KEY_WEBSITE = "website";
 
 	ListView list;
 	PerksAdapter adapter;
@@ -118,6 +120,13 @@ public class PerksListView extends Activity {
 					NodeList textImageList = firstImageElement.getChildNodes();
 					map.put(KEY_NAME_IMAGE, ((Node) textImageList.item(0))
 							.getNodeValue().trim());
+					
+					NodeList websiteList = firstPerksElement
+							.getElementsByTagName(KEY_WEBSITE);
+					Element firstWebsiteElement = (Element) websiteList.item(0);
+					NodeList textWebsiteList = firstWebsiteElement.getChildNodes();
+					map.put(KEY_WEBSITE, ((Node) textWebsiteList.item(0))
+							.getNodeValue().trim());
 
 					perksListCollection.add(map);
 
@@ -134,20 +143,23 @@ public class PerksListView extends Activity {
 				@Override
 				public void onItemClick(AdapterView<?> parent, View v,
 						int position, long id) {
-					Intent i = new Intent();
-					i.setClass(PerksListView.this, PerksAdapter.class);
-					i.putExtra("position", String.valueOf(position + 1));
-					i.putExtra("name",
-							perksListCollection.get(position).get(KEY_NAME));
-					i.putExtra("location", perksListCollection.get(position)
-							.get(KEY_LOCATION));
-					i.putExtra("number",
-							perksListCollection.get(position).get(KEY_NUMBER));
-					i.putExtra("discount", perksListCollection.get(position)
-							.get(KEY_DISCOUNT));
-					i.putExtra("name_image", perksListCollection.get(position)
-							.get(KEY_NAME_IMAGE));
-					startActivity(i);
+//					Intent i = new Intent();
+//					i.setClass(PerksListView.this, PerksAdapter.class);
+//					i.putExtra("position", String.valueOf(position + 1));
+//					i.putExtra("name",
+//							perksListCollection.get(position).get(KEY_NAME));
+//					i.putExtra("location", perksListCollection.get(position)
+//							.get(KEY_LOCATION));
+//					i.putExtra("number",
+//							perksListCollection.get(position).get(KEY_NUMBER));
+//					i.putExtra("discount", perksListCollection.get(position)
+//							.get(KEY_DISCOUNT));
+//					i.putExtra("name_image", perksListCollection.get(position)
+//							.get(KEY_NAME_IMAGE));
+//					startActivity(i);
+					Intent browserIntent =  
+							new Intent(Intent.ACTION_VIEW, Uri.parse(perksListCollection.get(position).get(KEY_WEBSITE)));
+					startActivity(browserIntent);
 				}
 
 			});

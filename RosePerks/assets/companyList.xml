@@ -7,6 +7,7 @@
         <number>(812) 877-8359</number>
         <discount>20% of Asics footwear</discount>
 		<name_image>asics</name_image>
+		<website>http://asicsamerica.com/</website>
     </company>
     <company>
         <id>2</id>
@@ -15,6 +16,7 @@
         <number>(812) 238-9963</number>
         <discount>Discounts on various car rentals</discount>
 		<name_image>avis</name_image>
+		<website>http://www.rose-hulman.edu/Users/groups/AdminSvcs/html/TRAVEL/AVIS_Local_Market_Page.pdf</website>
     </company>
     <company>
         <id>3</id>
@@ -23,6 +25,7 @@
         <number>(812) 232-5551</number>
         <discount>Free cup of coffee with the purchase of one or more cupcakes</discount>
 		<name_image>caboodle_cupcakes</name_image>
+		<website>www.caboodlecupcakes.com</website>
     </company>
     <company>
         <id>4</id>
@@ -31,6 +34,7 @@
         <number>(812) 234-3400</number>
         <discount>Room rate of $89.99 or 20% off of blackout rate</discount>
         <name_image>candlewood</name_image>
+        <website>http://www.Candlewoodsuites.com/terrehautein</website>
     </company>
     <company>
         <id>5</id>
@@ -39,6 +43,7 @@
         <number>(812) 240-0629</number>
         <discount>Free estimates and 15% off labor costs</discount>
 		<name_image>clouse_landscaping</name_image>
+		<website>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/clouselandscapingbrochure1.pdf</website>
     </company>
         <company>
         <id>6</id>
@@ -47,6 +52,7 @@
         <number>(317) 839-9600</number>
         <discount>Discounted rate of $65 plus tax; Stay, Park &amp; Fly $75 plus tax</discount>
 		<name_image>comfort_inn</name_image>
+		<website>http://www.rose-hulman.edu/Users/groups/AdminSvcs/html/TRAVEL/Comfort%20Inn%202013.pdf</website>
     </company>
     <company>
         <id>7</id>
@@ -55,6 +61,7 @@
         <number>(812) 238-1206</number>
         <discount>Discounted rate: $79.99 plus tax</discount>
 		<name_image>drury_inn</name_image>
+		<website>http://www.druryhotels.com/Reservations.aspx?</website>
     </company>
     <company>
         <id>8</id>
@@ -63,6 +70,7 @@
         <number>(812) 462-0222</number>
         <discount>N/A</discount>
 		<name_image>fifth_third</name_image>
+		<website>https://www.53.com/site</website>
     </company>
     <company>
         <id>9</id>
@@ -71,6 +79,7 @@
         <number>(812) 232-9478</number>
         <discount>coupon</discount>
 		<name_image>firestone</name_image>
+		<website>http://www.firestonecompleteautocare.com/</website>
     </company>
     <company>
         <id>10</id>
@@ -79,6 +88,7 @@
         <number>(812) 238-6000</number>
         <discount>25% discount on Rose-Hulman checks</discount>
 		<name_image>first_financial_bank</name_image>
+		<website>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/firstfinancial--checks.pdf</website>
     </company>
     <company>
         <id>11</id>
@@ -87,6 +97,7 @@
         <number>(812) 234-5448</number>
         <discount>Discount of $3 off any oil change</discount>
 		<name_image>grease_monkey</name_image>
+		<website>http://www.greasemonkeyterrehaute526.com/</website>
     </company>
     <company>
         <id>12</id>
@@ -95,6 +106,7 @@
         <number>(812) 242-2222</number>
         <discount>Discount room rate of $89</discount>
 		<name_image>hampton_inn</name_image>
+		<website>https://secure3.hilton.com/en_US/hp/reservation/book.htm</website>
     </company>
     <company>
         <id>13</id>
@@ -103,6 +115,7 @@
         <number>(812) 234-8900</number>
         <discount>$109.00 room rate</discount>
 		<name_image>hilton_garden_inn</name_image>
+		<website>http://hiltongardeninn3.hilton.com/en/index.html</website>
     </company>
     <company>
         <id>14</id>
@@ -111,6 +124,7 @@
         <number>(812) 234-3200</number>
         <discount>N/A</discount>
 		<name_image>holiday_inn</name_image>
+		<website>http://www.ihg.com/holidayinn/hotels/us/en/reservation</website>
     </company>
     <company>
         <id>15</id>
@@ -119,6 +133,7 @@
         <number>(812) 232-6081</number>
         <discount>$89 rate and hot brekfast for two</discount>
 		<name_image>holiday_inn</name_image>
+		<website>http://www.holidayinn.com/hotels/us/en/terre-haute/hufin/hoteldetail?</website>
     </company>
     <company>
         <id>16</id>
@@ -127,6 +142,7 @@
         <number>(317) 486-8000</number>
         <discount>see flyer..</discount>
 		<name_image>park_ride_and_fly</name_image>
+		<website>https://www.indybizxpress.com/rose-hulman/</website>
     </company>
     <company>
         <id>17</id>
@@ -135,6 +151,7 @@
         <number>(812) 235-5549</number>
         <discount>Free dessert with order of an entrée</discount>
 		<name_image>j_ford</name_image>
+		<website>http://jfordsblackangus.com/</website>
     </company>
     <company>
         <id>18</id>
@@ -143,6 +160,7 @@
         <number>(317) 279-2650</number>
         <discount>Discounted rate of $75 plus tax; Stay. Park &amp; Fly $85 plus tax</discount>
 		<name_image>laquinta_inn</name_image>
+		<website>http://www.lq.com/lq/index.jsp</website>
     </company>     
     <company>
         <id>19</id>
@@ -151,6 +169,7 @@
         <number>(812) 235-9197</number>
         <discount>5% off total check</discount>
 		<name_image>logan</name_image>
+		<website>http://logansribeye.net/</website>
     </company>     
     <company>
         <id>20</id>
@@ -159,6 +178,7 @@
         <number>(812) 234-9202</number>
         <discount>10% discount</discount>
 		<name_image>moggers</name_image>
+		<website>http://www.moggers-restaurant.com/our-menu/</website>
     </company>    
     <company>
         <id>21</id>
@@ -167,6 +187,7 @@
         <number>(812) 234-8343</number>
         <discount>10% discount</discount>
 		<name_image>pacesetter</name_image>
+		<website>http://www.pacesettersports.com/</website>
     </company>      
         <company>
         <id>22</id>
@@ -175,6 +196,7 @@
         <number>(812) 234-4268</number>
         <discount>Discounted rate of $55 plus tax</discount>
 		<name_image>pear_tree_inn</name_image>
+		<website>https://wwwc.druryhotels.com/Reservations.aspx</website>
     </company>     
     <company>
         <id>23</id>
@@ -183,6 +205,7 @@
         <number>(812) 232-6231</number>
         <discount>N/A</discount>
 		<name_image>pizza_hut</name_image>
+		<website>http://www.pizzahut.com/</website>
     </company>     
     <company>
         <id>24</id>
@@ -191,6 +214,7 @@
         <number>(812) 232-3319</number>
         <discount>$5 off cash and carry items</discount>
 		<name_image>poplar_flower</name_image>
+		<website>http://www.poplarflowershop.com/</website>
     </company> 
     <company>
         <id>25</id>
@@ -199,6 +223,7 @@
         <number>(812) 235-3333</number>
         <discount>N/A</discount>
 		<name_image>quality_inn</name_image>
+		<website>http://www.qualityinn.com/</website>
     </company>      
     <company>
         <id>26</id>
@@ -207,6 +232,7 @@
         <number>(812) 235-8335</number>
         <discount>Free extra side with purchase of entrée or combo</discount>
 		<name_image>ricks_smokehouse</name_image>
+		<website>www.rickssmokehouse.com</website>
     </company>  
     <company>
         <id>27</id>
@@ -215,6 +241,7 @@
         <number>(812) 232-3003</number>
         <discount>10% in 1/2 case &amp; 15% on case of wine</discount>
 		<name_image>seventhandseven</name_image>
+		<website>N/A</website>
     </company>        
     <company>
         <id>28</id>
@@ -223,6 +250,7 @@
         <number>(812) 244-2783</number>
         <discount>$99 rate</discount>
 		<name_image>springhill_suites</name_image>
+		<website>http://www.marriott.com/hotels/travel/indst-springhill-suites-terre-haute/</website>
     </company>  
     <company>
         <id>29</id>
@@ -231,5 +259,6 @@
         <number>(812) 232-6677</number>
         <discount>Free dessert with order of an entrée </discount>
 		<name_image>stables</name_image>
+		<website>www.stablessteakhouse.com</website>
     </company>  
 </companyList>
