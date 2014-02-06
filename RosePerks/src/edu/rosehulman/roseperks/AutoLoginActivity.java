@@ -17,5 +17,6 @@ public class AutoLoginActivity extends Activity {
 			Intent DetailView = new Intent(getApplicationContext(), MainScreenActivity.class);
 			startActivity(DetailView);
 		}
+		finish();
 	}
 }

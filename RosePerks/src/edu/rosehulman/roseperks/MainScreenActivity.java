@@ -80,6 +80,7 @@ public class MainScreenActivity extends FragmentActivity {
 				CredentialManager.removeSessionKey(getApplicationContext());
 				Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
 				startActivity(loginIntent);
+				finish();
 				return true;
 			}
 		});
