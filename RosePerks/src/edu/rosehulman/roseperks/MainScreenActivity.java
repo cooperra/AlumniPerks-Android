@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -15,6 +17,7 @@ public class MainScreenActivity extends FragmentActivity {
 	private Button Help;
 	private Button Category;
 	private Button Google_Maps;
+	private MenuItem Logout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,18 @@ public class MainScreenActivity extends FragmentActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main_screen, menu);
+
+		Logout = (MenuItem) menu.findItem(R.id.action_logout);
+		Logout.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
+				CredentialManager.removeSessionKey(getApplicationContext());
+				Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
+				startActivity(loginIntent);
+				return true;
+			}
+		});
 		return true;
 	}
 
