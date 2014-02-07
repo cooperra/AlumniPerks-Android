@@ -42,6 +42,10 @@
     <style name="lightboxButton.Grey">
         <item name="android:background">@drawable/btn_help</item>
     </style>
+    
+    <style name="lightboxButton.Red">
+        <item name="android:background">@drawable/btn_google_maps</item>
+    </style>
 
     <style name="LoginFormContainer">
         <item name="android:layout_width">match_parent</item>
