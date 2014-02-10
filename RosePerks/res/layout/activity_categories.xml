@@ -1,85 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     >
-    
-    <TableRow
-        android:id="@+id/top_row_Category"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-		
-    	<ImageButton
-   			android:id="@+id/restaurant_cat"
-   			android:layout_width="1dp"
-   			android:layout_weight="1"
-    		android:layout_height="wrap_content"
-    		android:src="@drawable/restaurant"
-    		android:text="@string/restaurant" 
-    		android:textSize="16sp"
-    		android:onClick="btnApprove_Click"
-    		android:contentDescription="@string/restaurant" />
+    android:orientation="vertical" >
 
-    	<ImageButton
-    	    android:id="@+id/entertainment_cat"
-    	    android:layout_width="0dp"
-    	    android:layout_height="wrap_content"
-    	    android:layout_weight="1"
-    	    android:onClick="btnApprove_Click"
-    	    android:src="@drawable/entertainment"
-    	    android:text="@string/entertainment"
-    	    android:textSize="16sp" />
-
-    	<ImageButton
-    	    android:id="@+id/hotel_cat"
-    	    android:layout_width="0dp"
-    	    android:layout_height="wrap_content"
-    	    android:layout_weight="1"
-    	    android:onClick="btnApprove_Click"
-    	    android:src="@drawable/hotel"
-    	    android:text="@string/hotel"
-    	    android:textSize="16sp" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/bottom_row_category"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
         android:layout_weight="1"
-        >
-		
+        android:orientation="horizontal" >
+
         <ImageButton
-   			android:id="@+id/bars_pubs_cat"
-   			android:layout_width="0dp"
-   			android:layout_weight="1"
-    		android:layout_height="wrap_content"
-    		android:src="@drawable/bars"
-    		android:text="@string/bars_pubs" 
-    		android:textSize="16sp"
-    		android:onClick="btnApprove_Click" />
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/restaurant" />
 
-		<ImageButton
-   			android:id="@+id/stores_cat"
-   			android:layout_width="0dp"
-   			android:layout_weight="1"
-    		android:layout_height="wrap_content"
-    		android:src="@drawable/stores"
-    		android:text="@string/stores" 
-    		android:textSize="16sp"
-    		android:onClick="btnApprove_Click" />
-        
         <ImageButton
-   			android:id="@+id/other_cat"
-   			android:layout_width="0dp"
-   			android:layout_weight="1"
-    		android:layout_height="wrap_content"
-    		android:src="@drawable/other"
-    		android:text="@string/other" 
-    		android:textSize="16sp"
-    		android:onClick="btnApprove_Click" />
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/entertainment" />
+    </LinearLayout>
 
-    </TableRow>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
 
-</TableLayout>
+        <ImageButton
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/hotel" />
+
+        <ImageButton
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bars" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/stores" />
+
+        <ImageButton
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/other" />
+    </LinearLayout>
+
+</LinearLayout>
