@@ -1,75 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@android:color/background_dark"
-    android:gravity="center_vertical|center_horizontal"
-    android:orientation="vertical" >
-
-    <Button
-        android:id="@+id/restaurant_cat"
-        android:layout_width="164dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/category_btn_red"
-        android:contentDescription="@string/restaurant"
-        android:drawablePadding="5dp"
-        android:drawableRight="@drawable/Restaurant2"
-        android:onClick="btnApprove_Click"
-        android:text="@string/restaurant"
-        android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/entertainment_cat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/category_btn_blue"
-        android:onClick="btnApprove_Click"
-        android:text="@string/entertainment"
-        android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/hotel_cat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/category_btn_green"
-        android:onClick="btnApprove_Click"
-        android:text="@string/hotel"
-        android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/bars_pubs_cat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/category_btn_purple"
-        android:onClick="btnApprove_Click"
-        android:text="@string/bars_pubs"
-        android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/stores_cat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/category_btn_yellow"
-        android:onClick="btnApprove_Click"
-        android:text="@string/stores"
-        android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/other_cat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/category_btn_orange"
-        android:onClick="btnApprove_Click"
-        android:text="@string/other"
-        android:textSize="16sp" />
-=======
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -130,6 +60,5 @@
             android:layout_weight="1"
             android:background="@drawable/other" />
     </LinearLayout>
->>>>>>> b3472e526db528e98106c7a1610ad9b86595afe1
 
 </LinearLayout>
