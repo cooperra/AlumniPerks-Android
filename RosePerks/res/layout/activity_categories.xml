@@ -11,12 +11,14 @@
         android:orientation="horizontal" >
 
         <ImageButton
+            android:id="@+id/restaurant_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/restaurant" />
 
         <ImageButton
+            android:id="@+id/entertainment_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -30,12 +32,14 @@
         android:orientation="horizontal" >
 
         <ImageButton
+            android:id="@+id/hotel_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/hotel" />
 
         <ImageButton
+            android:id="@+id/bars_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -49,12 +53,14 @@
         android:orientation="horizontal" >
 
         <ImageButton
+            android:id="@+id/stores_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/stores" />
 
         <ImageButton
+            android:id="@+id/other_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
