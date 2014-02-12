@@ -2,7 +2,13 @@ package edu.rosehulman.roseperks;
 
 import android.app.Activity;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +17,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.http.util.ByteArrayBuffer;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -47,6 +54,16 @@ public class PerksListView extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_perks_list_items);
 
+		
+		String DownloadUrl = "http://alumniperks.csse.rose-hulman.edu/companyList.xml";
+	     String fileName = "companyList.xml";
+
+	    DownloadDatabase(DownloadUrl,fileName);
+
+	    // and the method is
+
+	
+	    
 		try {
 
 //			URL url = new URL("alumniperks.csse.rose-hulman.edu/companyList.xml");
@@ -175,5 +192,48 @@ public class PerksListView extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main_screen, menu);
 		return true;
+	}
+	public void DownloadDatabase(String DownloadUrl, String fileName) {
+	    try {
+	        File root = android.os.Environment.getExternalStorageDirectory();
+	        File dir = new File(root.getAbsolutePath());
+	        if(dir.exists() == false){
+	             dir.mkdirs();  
+	        }
+
+	        URL url = new URL(DownloadUrl);
+	        File file = new File(dir,fileName);
+
+	        long startTime = System.currentTimeMillis();
+	        Log.d("DownloadManager" , "download url:" +url);
+	        Log.d("DownloadManager" , "download file name:" + fileName);
+
+	        URLConnection uconn = url.openConnection();
+	        uconn.setReadTimeout(100);
+	        uconn.setConnectTimeout(100);
+
+	        InputStream is = uconn.getInputStream();
+	        BufferedInputStream bufferinstream = new BufferedInputStream(is);
+
+	        ByteArrayBuffer baf = new ByteArrayBuffer(5000);
+	        int current = 0;
+	        while((current = bufferinstream.read()) != -1){
+	            baf.append((byte) current);
+	        }
+
+	        FileOutputStream fos = new FileOutputStream( file);
+	        fos.write(baf.toByteArray());
+	        fos.flush();
+	        fos.close();
+	        Log.d("DownloadManager" , "download ready in" + ((System.currentTimeMillis() - startTime)/1000) + "sec");
+	        int dotindex = fileName.lastIndexOf('.');
+	        if(dotindex>=0){
+	            fileName = fileName.substring(0,dotindex);
+	        }
+	    }
+	    catch(IOException e) {
+	        Log.d("DownloadManager" , "Error:" + e);
+	    }
+
 	}
 }
