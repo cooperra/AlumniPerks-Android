@@ -1,7 +1,5 @@
 package edu.rosehulman.roseperks;
 
-import android.app.Activity;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,14 +7,13 @@ import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,11 +21,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
-public class PerksListView extends Activity {
-	// static final String URL = "companylist.xml";
+public class HotelListView extends Activity {
 	static final String KEY_TAG = "company";
 	static final String KEY_NAME = "name";
 	static final String KEY_ID = "id";
@@ -37,10 +33,13 @@ public class PerksListView extends Activity {
 	static final String KEY_DISCOUNT = "discount";
 	static final String KEY_NAME_IMAGE = "name_image";
 	static final String KEY_WEBSITE = "website";
+	static final String KEY_CATEGORY = "category";
 
 	ListView list;
 	PerksAdapter adapter;
 	List<HashMap<String, String>> perksListCollection;
+	List<HashMap<String, String>> hotelListCollection;
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -49,7 +48,6 @@ public class PerksListView extends Activity {
 
 		try {
 
-//			URL url = new URL("alumniperks.csse.rose-hulman.edu/companyList.xml");
 			DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory
 					.newInstance();
 			DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
@@ -128,12 +126,25 @@ public class PerksListView extends Activity {
 					NodeList textWebsiteList = firstWebsiteElement.getChildNodes();
 					map.put(KEY_WEBSITE, ((Node) textWebsiteList.item(0))
 							.getNodeValue().trim());
+					
+					NodeList categoryList = firstPerksElement
+							.getElementsByTagName(KEY_CATEGORY);
+					Element firstCategoryElement = (Element) categoryList.item(0);
+					NodeList textCategoryList = firstCategoryElement.getChildNodes();
+					map.put(KEY_CATEGORY, ((Node) textCategoryList.item(0))
+							.getNodeValue().trim());
 
 					perksListCollection.add(map);
 
 				}
 			}
-			PerksAdapter adapter = new PerksAdapter(this, perksListCollection);
+			hotelListCollection = new ArrayList<HashMap<String, String>>();
+			for(int j = 0; j < perksListCollection.size(); j++){
+				if(perksListCollection.get(j).get(KEY_CATEGORY).equals("hotel")){
+					hotelListCollection.add(perksListCollection.get(j));
+				}
+			}
+			PerksAdapter adapter = new PerksAdapter(this, hotelListCollection);
 
 			list = (ListView) findViewById(R.id.list);
 
@@ -159,7 +170,7 @@ public class PerksListView extends Activity {
 //							.get(KEY_NAME_IMAGE));
 //					startActivity(i);
 					Intent browserIntent =  
-							new Intent(Intent.ACTION_VIEW, Uri.parse(perksListCollection.get(position).get(KEY_WEBSITE)));
+							new Intent(Intent.ACTION_VIEW, Uri.parse(hotelListCollection.get(position).get(KEY_WEBSITE)));
 					startActivity(browserIntent);
 				}
 

@@ -73,7 +73,7 @@
     <company>
         <id>8</id>
         <name>Fifth Third Bank- Main</name>
-        <category>other</category>
+        <category>banking</category>
         <location>350 Wabash Avenue Terre Haute, IN 47807</location>
         <number>(812) 462-0222</number>
         <discount>N/A</discount>
@@ -93,7 +93,7 @@
     <company>
         <id>10</id>
         <name>First Financial Bank-Main</name>
-        <category>other</category>
+        <category>banking</category>
         <location>One First Financial Plaza Terre Haute, IN 47808</location>
         <number>(812) 238-6000</number>
         <discount>25% discount on Rose-Hulman checks</discount>
@@ -193,7 +193,7 @@
     <company>
         <id>20</id>
         <name>M.Moggers Brewery</name>
-        <category>bars</category>
+        <category>entertainment</category>
         <location>908 Poplar Street Terre Haute, IN 47807</location>
         <number>(812) 234-9202</number>
         <discount>10% discount</discount>
@@ -263,7 +263,7 @@
     <company>
         <id>27</id>
         <name>7 &amp; 70 Liquor &amp; World of Wines </name>
-        <category>bars</category>
+        <category>entertainment</category>
         <location>3305 S. 7th Street Terre Haute, IN 47802</location>
         <number>(812) 232-3003</number>
         <discount>10% in 1/2 case &amp; 15% on case of wine</discount>

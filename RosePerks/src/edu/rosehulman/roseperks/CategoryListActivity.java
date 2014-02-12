@@ -13,7 +13,7 @@ public class CategoryListActivity extends Activity {
 	private ImageButton Restaurant;
 	private ImageButton Entertainment;
 	private ImageButton Hotel;
-	private ImageButton Bars;
+	private ImageButton Banking;
 	private ImageButton Stores;
 	private ImageButton Other;
 	
@@ -24,7 +24,7 @@ public class CategoryListActivity extends Activity {
 		Restaurant = (ImageButton) findViewById(R.id.restaurant_cat);
 		Entertainment = (ImageButton) findViewById(R.id.entertainment_cat);
 		Hotel = (ImageButton) findViewById(R.id.hotel_cat);
-		Bars = (ImageButton) findViewById(R.id.bars_cat);
+		Banking = (ImageButton) findViewById(R.id.banking_cat);
 		Stores = (ImageButton) findViewById(R.id.stores_cat);
 		Other = (ImageButton) findViewById(R.id.other_cat);
 		
@@ -54,16 +54,20 @@ public class CategoryListActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				Intent hotelView = new Intent(getApplicationContext(),
+						HotelListView.class);
+				startActivity(hotelView);
 				
 			}
 		});
 		
-		Bars.setOnClickListener(new OnClickListener() {
+		Banking.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				Intent bankingView = new Intent(getApplicationContext(),
+						BankingListView.class);
+				startActivity(bankingView);
 				
 			}
 		});
@@ -72,7 +76,9 @@ public class CategoryListActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				Intent storesView = new Intent(getApplicationContext(),
+						StoresListView.class);
+				startActivity(storesView);
 				
 			}
 		});
@@ -81,7 +87,9 @@ public class CategoryListActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				Intent otherView = new Intent(getApplicationContext(),
+						OtherListView.class);
+				startActivity(otherView);
 				
 			}
 		});

@@ -39,7 +39,7 @@
             android:background="@drawable/hotel" />
 
         <ImageButton
-            android:id="@+id/bars_cat"
+            android:id="@+id/banking_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
