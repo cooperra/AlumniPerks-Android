@@ -25,7 +25,11 @@
     <string name="stores">Stores</string>
     <string name="other">Other</string>
     <string name="title_activity_categories">CategoryActivity</string>
-    <string name="title_activity_restaurant_list">RestaurantPerks</string>
-    <string name="title_activity_entertainment_list">EntertainmentPerks</string>
+    <string name="title_activity_restaurant_list">Restaurant Perks</string>
+    <string name="title_activity_entertainment_list">Entertainment Perks</string>
+    <string name="title_activity_hotel_list">Hotel Perks</string>
+    <string name="title_activity_banks_list">Banks Perks</string>
+    <string name="title_activity_stores_list">Stores Perks</string>
+    <string name="title_activity_other_list">Miscellaneous Perks</string>
 
 </resources>
