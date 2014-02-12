@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -66,7 +67,6 @@ public class PerksListView extends Activity {
 	    
 		try {
 
-//			URL url = new URL("alumniperks.csse.rose-hulman.edu/companyList.xml");
 			DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory
 					.newInstance();
 			DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
@@ -212,7 +212,19 @@ public class PerksListView extends Activity {
 	        uconn.setReadTimeout(100);
 	        uconn.setConnectTimeout(100);
 
-	        InputStream is = uconn.getInputStream();
+	        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+
+	        //set up some things on the connection
+
+	        urlConnection.setRequestMethod("GET");
+
+	        urlConnection.setDoOutput(true);
+
+	        //and connect!
+
+	        urlConnection.connect();
+	        
+	        InputStream is = urlConnection.getInputStream();
 	        BufferedInputStream bufferinstream = new BufferedInputStream(is);
 
 	        ByteArrayBuffer baf = new ByteArrayBuffer(5000);
