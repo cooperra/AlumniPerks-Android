@@ -34,6 +34,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -70,6 +71,10 @@ public class PerksListView extends Activity {
 	    }
 	}
 
+	public void onPerkRefreshButton(MenuItem m) {
+		startPerkRefresh();
+	}
+	
 	/**
 	 * Downloads new perk data
 	 */
@@ -286,7 +291,7 @@ public class PerksListView extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main_screen, menu);
+		getMenuInflater().inflate(R.menu.perks_list, menu);
 		return true;
 	}
 //	public void DownloadDatabase(String DownloadUrl, String fileName) {
