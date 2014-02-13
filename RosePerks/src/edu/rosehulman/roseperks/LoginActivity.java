@@ -221,7 +221,13 @@ public class LoginActivity extends Activity {
 				}
 			}
 
-			// TODO: register the new account here.
+			//// TODO: register the new account here.
+			// Instead, we are letting the user in if they have a specific password and ANY username
+			if (mPassword.equals("hello")) {
+				saveSessionKey("TODO_get_real_key");
+				launchMainActivity();
+				return true;
+			}
 			return true;
 		}
 
