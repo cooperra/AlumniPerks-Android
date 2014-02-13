@@ -56,11 +56,11 @@ public class MainScreenActivity extends FragmentActivity {
 			}
 		});
 		Google_Maps.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent browserIntent =  
-						new Intent(Intent.ACTION_VIEW, Uri.parse("https://mapsengine.google.com/map/edit?mid=zRBarr6eawLk.kmDxq6a0pBE4"));
+						new Intent(Intent.ACTION_VIEW, Uri.parse("https://mapsengine.google.com/map/u/0/edit?mid=zRBarr6eawLk.kMs2XUUHErnM"));
 				startActivity(browserIntent);
 				
 			}
