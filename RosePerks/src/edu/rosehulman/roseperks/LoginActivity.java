@@ -262,7 +262,7 @@ public class LoginActivity extends Activity {
 		}
 	}
 	
-	public void onVisitRoseSTEMButton(View v) {
+	public void onRoseSTEMButton(View v) {
 		Intent roseSTEMWebsite = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rosestem.rose-hulman.edu/"));
 		startActivity(roseSTEMWebsite);
 	}

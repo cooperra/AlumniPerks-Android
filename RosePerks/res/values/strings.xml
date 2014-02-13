@@ -30,5 +30,6 @@
     <string name="title_activity_stores_list">Stores Perks</string>
     <string name="title_activity_other_list">Miscellaneous Perks</string>
     <string name="action_refresh">Refresh Perks</string>
+    <string name="toast_refresh_done">Done!</string>
 
 </resources>

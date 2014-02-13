@@ -39,6 +39,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class PerksListView extends Activity {
 	// static final String URL = "companylist.xml";
@@ -119,6 +120,8 @@ public class PerksListView extends Activity {
 				hideProgressView();
 				if (result) {
 					loadPerks();
+					Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_refresh_done, Toast.LENGTH_SHORT);
+					toast.show();
 				}
 			}
 
