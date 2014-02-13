@@ -193,6 +193,52 @@ public class PerksListView extends Activity {
 		getMenuInflater().inflate(R.menu.main_screen, menu);
 		return true;
 	}
+<<<<<<< HEAD
 	
 
+=======
+//	public void DownloadDatabase(String DownloadUrl, String fileName) {
+//	    try {
+//	        File root = android.os.Environment.getExternalStorageDirectory();
+//	        File dir = new File(root.getAbsolutePath());
+//	        if(dir.exists() == false){
+//	             dir.mkdirs();  
+//	        }
+//
+//	        URL url = new URL(DownloadUrl);
+//	        File file = new File(dir,fileName);
+//
+//	        long startTime = System.currentTimeMillis();
+//	        Log.d("DownloadManager" , "download url:" +url);
+//	        Log.d("DownloadManager" , "download file name:" + fileName);
+//
+//	        URLConnection uconn = url.openConnection();
+//	        uconn.setReadTimeout(1000);
+//	        uconn.setConnectTimeout(1000);
+//
+//	        InputStream is = uconn.getInputStream();
+//	        BufferedInputStream bufferinstream = new BufferedInputStream(is);
+//
+//	        ByteArrayBuffer baf = new ByteArrayBuffer(5000);
+//	        int current = 0;
+//	        while((current = bufferinstream.read()) != -1){
+//	            baf.append((byte) current);
+//	        }
+//
+//	        FileOutputStream fos = new FileOutputStream( file);
+//	        fos.write(baf.toByteArray());
+//	        fos.flush();
+//	        fos.close();
+//	        Log.d("DownloadManager" , "download ready in" + ((System.currentTimeMillis() - startTime)/1000) + "sec");
+//	        int dotindex = fileName.lastIndexOf('.');
+//	        if(dotindex>=0){
+//	            fileName = fileName.substring(0,dotindex);
+//	        }
+//	    }
+//	    catch(IOException e) {
+//	        Log.d("DownloadManager" , "Error:" + e);
+//	    }
+//
+//	}
+>>>>>>> 0a29697c4d5fc8ddef9d4619f6624bdd64fc7706
 }
