@@ -231,6 +231,12 @@ public class PerksListView extends Activity {
 			Log.e("Error", ex.getMessage(), ex);
 		} catch (Exception ex) {
 			Log.e("Error", "Loading exception", ex);
+		} finally {
+			try {
+				file.close();
+			} catch (IOException e) {
+				Log.e("Error", "Problem closing file", e);
+			}
 		}
 		PerksAdapter adapter = new PerksAdapter(this, perksListCollection);
 

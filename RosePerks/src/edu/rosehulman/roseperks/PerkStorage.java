@@ -1,5 +1,6 @@
 package edu.rosehulman.roseperks;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -108,10 +109,21 @@ public class PerkStorage extends Activity {
 			// Save in internal storage
 			FileOutputStream file;
 			try {
-				file = getCallingActivity().openFileOutput("companyList.xml", MODE_PRIVATE);
-				
+				// save temp file
+				file = getCallingActivity().openFileOutput("companyList-temp.xml", MODE_PRIVATE);
 				copy(stream, file);
+				file.flush();
+				file.close();
 				
+				// rename temp file to actual file location
+				File filesDir = getCallingActivity().getFilesDir();
+				File fTemp = new File(filesDir, "companyList-temp.xml");
+				if (!fTemp.exists()) {
+					Log.wtf(PerkStorage.class.getSimpleName(), "New perk data file doesn't exist");
+				}
+				if (!fTemp.renameTo(new File(filesDir, "companyList.xml"))) {
+					Log.wtf(PerkStorage.class.getSimpleName(), "Couldn't rename perk data file");
+				}
 			} catch (FileNotFoundException e) {
 				Log.wtf(PerkStorage.class.getSimpleName(), "Internal storage issue", e);
 				e.printStackTrace();
@@ -127,6 +139,7 @@ public class PerkStorage extends Activity {
 			    out.write(buffer, 0, len);
 			    bytecounter += len;
 			}
+			in.close();
 			
 			Log.i(PerkStorage.class.getSimpleName(), "Downloaded and saved " + bytecounter + " bytes");
 		}
