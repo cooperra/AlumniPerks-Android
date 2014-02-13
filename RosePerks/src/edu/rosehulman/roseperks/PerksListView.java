@@ -193,10 +193,6 @@ public class PerksListView extends Activity {
 		getMenuInflater().inflate(R.menu.main_screen, menu);
 		return true;
 	}
-<<<<<<< HEAD
-	
-
-=======
 //	public void DownloadDatabase(String DownloadUrl, String fileName) {
 //	    try {
 //	        File root = android.os.Environment.getExternalStorageDirectory();
@@ -240,5 +236,4 @@ public class PerksListView extends Activity {
 //	    }
 //
 //	}
->>>>>>> 0a29697c4d5fc8ddef9d4619f6624bdd64fc7706
 }

@@ -28,11 +28,7 @@
     <string name="title_activity_restaurant_list">Restaurant Perks</string>
     <string name="title_activity_entertainment_list">Entertainment Perks</string>
     <string name="title_activity_hotel_list">Hotel Perks</string>
-<<<<<<< HEAD
-    <string name="title_activity_banking_list">Banks Perks</string>
-=======
     <string name="title_activity_banking_list">Banking Perks</string>
->>>>>>> 0a29697c4d5fc8ddef9d4619f6624bdd64fc7706
     <string name="title_activity_stores_list">Stores Perks</string>
     <string name="title_activity_other_list">Miscellaneous Perks</string>
 
