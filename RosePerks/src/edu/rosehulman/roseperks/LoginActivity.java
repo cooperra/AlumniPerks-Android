@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -259,5 +260,10 @@ public class LoginActivity extends Activity {
 			mAuthTask = null;
 			showProgress(false);
 		}
+	}
+	
+	public void onVisitRoseSTEMButton(View v) {
+		Intent roseSTEMWebsite = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rosestem.rose-hulman.edu/"));
+		startActivity(roseSTEMWebsite);
 	}
 }
