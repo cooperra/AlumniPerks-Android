@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">RosePerks</string>
+    <string name="app_name">Rose-Hulman Alumni Perks</string>
     <string name="action_settings">Settings</string>
     <string name="action_logout">Logout</string>
-    <string name="hello_world">Hello world!</string>
     <string name="Username">Username</string>
     <string name="Password">Password</string>
-    <string name="RosePerks">Rose Perks</string>
-    <string name="title_activity_main_screen">Rose Perks</string>
-    <string name="title_activity_perks_list">Perks</string>
-    <string name="add_view_button">Add View</string>
+    <string name="RosePerks">Rose-Hulman Alumni Perks</string>
+    <string name="title_activity_main_screen">Rose-Hulman Alumni Perks</string>
+    <string name="title_activity_perks_list">All Perks</string>
     <string name="category_string">Category</string>
     <string name="google_map_string">Google Maps</string>
     <string name="help_string">Help</string>
@@ -21,15 +19,17 @@
     <string name="restaurant">Restaurant</string>
     <string name="hotel">Hotel</string>
     <string name="entertainment">Entertainment</string>
-    <string name="bars_pubs">Bar&amp;Pubs</string>
+    <string name="bars_pubs">Bars &amp; Pubs</string>
     <string name="stores">Stores</string>
     <string name="other">Other</string>
-    <string name="title_activity_categories">CategoryActivity</string>
+    <string name="title_activity_categories">Categories</string>
     <string name="title_activity_restaurant_list">Restaurant Perks</string>
     <string name="title_activity_entertainment_list">Entertainment Perks</string>
     <string name="title_activity_hotel_list">Hotel Perks</string>
     <string name="title_activity_banking_list">Banking Perks</string>
     <string name="title_activity_stores_list">Stores Perks</string>
     <string name="title_activity_other_list">Miscellaneous Perks</string>
+    <string name="action_refresh">Refresh Perks</string>
+    <string name="toast_refresh_done">Done!</string>
 
 </resources>

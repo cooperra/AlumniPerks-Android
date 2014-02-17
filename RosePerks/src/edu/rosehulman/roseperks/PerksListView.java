@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,15 +26,20 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
+import edu.rosehulman.roseperks.PerkStorage.HttpResponseException;
+import edu.rosehulman.roseperks.PerkStorage.NetworkDisconnectedException;
+import edu.rosehulman.roseperks.PerkStorage.PerkUpdateTask;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class PerksListView extends Activity {
 	// static final String URL = "companylist.xml";
@@ -55,31 +61,104 @@ public class PerksListView extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_perks_list_items);
 
-		
-//		String DownloadUrl = "http://alumniperks.csse.rose-hulman.edu/companyList.xml";
-	    String fileName = "companyList.xml";
+	    if (PerkStorage.isEmpty(this)) {
+	    	// attempt to refresh perks
+	    	startPerkRefresh();
+	    	// TODO: assume that it didn't work show retry button
+	    	// (if it does work, retry button will be hidden automatically)
+	    	showRetryButton();
+	    } else {
+	    	loadPerks();
+	    }
+	}
 
-//	    DownloadDatabase(DownloadUrl,fileName);
-
-	    // and the method is
-
+	public void onPerkRefreshButton(MenuItem m) {
+		startPerkRefresh();
+	}
 	
-	    
+	/**
+	 * Downloads new perk data
+	 */
+	private void startPerkRefresh() {
+		// TODO: don't update if update already in progress
+		final Activity thiss = this;
+		
+		PerkUpdateTask updater = new PerkStorage.PerkUpdateTask() {
+			
+			@Override
+			public Activity getCallingActivity() {
+				return thiss;
+			}
+
+			@Override
+			public void onNetworkProblem(IOException e) {
+				super.onNetworkProblem(e);
+				// TODO: show toaster notification
+			}
+
+			@Override
+			public void onNonOKHttpResponse(HttpResponseException e) {
+				super.onNonOKHttpResponse(e);
+				//TODO: show toaster notification
+			}
+
+			@Override
+			public void onNoConnection(NetworkDisconnectedException e) {
+				super.onNoConnection(e);
+				//TODO: show toaster notification
+			}
+
+			@Override
+			protected void onPreExecute() {
+				super.onPreExecute();
+				showProgressView();
+			}
+
+			@Override
+			protected void onPostExecute(Boolean result) {
+				super.onPostExecute(result);
+				hideProgressView();
+				if (result) {
+					loadPerks();
+					Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_refresh_done, Toast.LENGTH_SHORT);
+					toast.show();
+				}
+			}
+
+			@Override
+			protected void onProgressUpdate(Void... values) {
+				super.onProgressUpdate(values);
+				// This is where a progress bar could be controlled
+				// TODO: implement or remove stub
+			}
+		};
+		
+		updater.execute();
+	}
+
+	/**
+	 * Populates the ListView with perks from the XML
+	 */
+	private void loadPerks() {
+		FileInputStream file = PerkStorage.getXMLFile(this);
+		if (file == null) {
+			Log.e(PerksListView.class.getSimpleName(), "File not found");
+			return;
+		}
+
+		perksListCollection = new ArrayList<HashMap<String, String>>();
+		
 		try {
 
 			DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory
 					.newInstance();
 			DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 			Document doc = docBuilder
-					.parse(getAssets().open(fileName));
-
-			perksListCollection = new ArrayList<HashMap<String, String>>();
+					.parse(file);
 
 			doc.getDocumentElement().normalize();
 
 			NodeList perksList = doc.getElementsByTagName("company");
-
-			HashMap<String, String> map = null;
 
 			if (perksList != null && perksList.getLength() > 0) {
 				perksListCollection.clear();
@@ -87,10 +166,11 @@ public class PerksListView extends Activity {
 
 				for (int i = 0; i < len; i++) {
 
-					map = new HashMap<String, String>();
+					HashMap<String, String> map = new HashMap<String, String>();
 
 					Node firstPerksNode = perksList.item(i);
 
+					// TODO: check for nulls that occur when fields are missing
 					Element firstPerksElement = (Element) firstPerksNode;
 					NodeList idList = firstPerksElement
 							.getElementsByTagName(KEY_ID);
@@ -150,17 +230,28 @@ public class PerksListView extends Activity {
 
 				}
 			}
-			PerksAdapter adapter = new PerksAdapter(this, perksListCollection);
+		} catch (IOException ex) {
+			Log.e("Error", ex.getMessage(), ex);
+		} catch (Exception ex) {
+			Log.e("Error", "Loading exception", ex);
+		} finally {
+			try {
+				file.close();
+			} catch (IOException e) {
+				Log.e("Error", "Problem closing file", e);
+			}
+		}
+		PerksAdapter adapter = new PerksAdapter(this, perksListCollection);
 
-			list = (ListView) findViewById(R.id.list);
+		list = (ListView) findViewById(R.id.list);
 
-			list.setAdapter(adapter);
+		list.setAdapter(adapter);
 
-			list.setOnItemClickListener(new OnItemClickListener() {
+		list.setOnItemClickListener(new OnItemClickListener() {
 
-				@Override
-				public void onItemClick(AdapterView<?> parent, View v,
-						int position, long id) {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View v,
+					int position, long id) {
 //					Intent i = new Intent();
 //					i.setClass(PerksListView.this, PerksAdapter.class);
 //					i.putExtra("position", String.valueOf(position + 1));
@@ -175,65 +266,41 @@ public class PerksListView extends Activity {
 //					i.putExtra("name_image", perksListCollection.get(position)
 //							.get(KEY_NAME_IMAGE));
 //					startActivity(i);
-					Intent browserIntent =  
-							new Intent(Intent.ACTION_VIEW, Uri.parse(perksListCollection.get(position).get(KEY_WEBSITE)));
-					startActivity(browserIntent);
-				}
+				Intent browserIntent =  
+						new Intent(Intent.ACTION_VIEW, Uri.parse(perksListCollection.get(position).get(KEY_WEBSITE)));
+				startActivity(browserIntent);
+			}
 
-			});
-		} catch (IOException ex) {
-			Log.e("Error", ex.getMessage());
-		} catch (Exception ex) {
-			Log.e("Error", "Loading exception");
+		});
+		
+		if (list.getChildCount() > 0) {
+			hideRetryButton();
 		}
+	}
+
+	protected void showProgressView() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	protected void hideProgressView() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void showRetryButton() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void hideRetryButton() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main_screen, menu);
+		getMenuInflater().inflate(R.menu.perks_list, menu);
 		return true;
 	}
-//	public void DownloadDatabase(String DownloadUrl, String fileName) {
-//	    try {
-//	        File root = android.os.Environment.getExternalStorageDirectory();
-//	        File dir = new File(root.getAbsolutePath());
-//	        if(dir.exists() == false){
-//	             dir.mkdirs();  
-//	        }
-//
-//	        URL url = new URL(DownloadUrl);
-//	        File file = new File(dir,fileName);
-//
-//	        long startTime = System.currentTimeMillis();
-//	        Log.d("DownloadManager" , "download url:" +url);
-//	        Log.d("DownloadManager" , "download file name:" + fileName);
-//
-//	        URLConnection uconn = url.openConnection();
-//	        uconn.setReadTimeout(1000);
-//	        uconn.setConnectTimeout(1000);
-//
-//	        InputStream is = uconn.getInputStream();
-//	        BufferedInputStream bufferinstream = new BufferedInputStream(is);
-//
-//	        ByteArrayBuffer baf = new ByteArrayBuffer(5000);
-//	        int current = 0;
-//	        while((current = bufferinstream.read()) != -1){
-//	            baf.append((byte) current);
-//	        }
-//
-//	        FileOutputStream fos = new FileOutputStream( file);
-//	        fos.write(baf.toByteArray());
-//	        fos.flush();
-//	        fos.close();
-//	        Log.d("DownloadManager" , "download ready in" + ((System.currentTimeMillis() - startTime)/1000) + "sec");
-//	        int dotindex = fileName.lastIndexOf('.');
-//	        if(dotindex>=0){
-//	            fileName = fileName.substring(0,dotindex);
-//	        }
-//	    }
-//	    catch(IOException e) {
-//	        Log.d("DownloadManager" , "Error:" + e);
-//	    }
-//
-//	}
 }

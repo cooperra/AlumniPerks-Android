@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -32,35 +33,43 @@
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.PerksListView"
-            android:label="@string/title_activity_perks_list" >
+            android:label="@string/title_activity_perks_list"
+            android:parentActivityName="edu.rosehulman.roseperks.MainScreenActivity" >
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.RestaurantListView"
-            android:label="@string/title_activity_restaurant_list" >
+            android:label="@string/title_activity_restaurant_list"
+            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.EntertainmentListView"
-            android:label="@string/title_activity_entertainment_list" >
+            android:label="@string/title_activity_entertainment_list"
+            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.HotelListView"
-            android:label="@string/title_activity_hotel_list" >
+            android:label="@string/title_activity_hotel_list"
+            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.BankingListView"
-            android:label="@string/title_activity_banking_list" >
+            android:label="@string/title_activity_banking_list"
+            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.StoresListView"
-            android:label="@string/title_activity_stores_list" >
+            android:label="@string/title_activity_stores_list"
+            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.OtherListView"
-            android:label="@string/title_activity_other_list" >
+            android:label="@string/title_activity_other_list"
+            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.CategoryListActivity"
-            android:label="@string/title_activity_categories" >
+            android:label="@string/title_activity_categories"
+            android:parentActivityName="edu.rosehulman.roseperks.MainScreenActivity" >
         </activity>
         <activity android:name="edu.rosehulman.roseperks.TestDatabaseActivity" >
             <intent-filter>
