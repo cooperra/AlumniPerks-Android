@@ -34,6 +34,14 @@
             android:label="@string/title_activity_perks_list" >
         </activity>
         <activity
+            android:name="edu.rosehulman.roseperks.RestaurantListView"
+            android:label="@string/title_activity_restaurant_list" >
+        </activity>
+        <activity
+            android:name="edu.rosehulman.roseperks.EntertainmentListView"
+            android:label="@string/title_activity_entertainment_list" >
+        </activity>
+        <activity
             android:name="edu.rosehulman.roseperks.CategoryListActivity"
             android:label="@string/title_activity_categories" >
         </activity>

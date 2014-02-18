@@ -3,6 +3,7 @@
     <company>
         <id>1</id>
         <name>Asics</name>
+        <category>store</category>
         <location>Location: Through Alumni Affairs</location>
         <number>(812) 877-8359</number>
         <discount>20% of Asics footwear</discount>
@@ -12,6 +13,7 @@
     <company>
         <id>2</id>
         <name>AVIS</name>
+        <category>other</category>
         <location>2629 S. 3rd Street Terre Haute, IN 47802</location>
         <number>(812) 238-9963</number>
         <discount>Discounts on various car rentals</discount>
@@ -21,15 +23,17 @@
     <company>
         <id>3</id>
         <name>Caboodle Cupcakes</name>
+        <category>restaurant</category>
         <location>3419 S. 7th Street Terre Haute, IN 47802</location>
         <number>(812) 232-5551</number>
         <discount>Free cup of coffee with the purchase of one or more cupcakes</discount>
 		<name_image>caboodle_cupcakes</name_image>
-		<website>www.caboodlecupcakes.com</website>
+		<website>http://www.caboodlecupcakes.com</website>
     </company>
     <company>
         <id>4</id>
         <name>Candlewood Suites</name>
+        <category>hotel</category>
         <location>721 Wabash Ave. Terre Haute, IN 47807</location>
         <number>(812) 234-3400</number>
         <discount>Room rate of $89.99 or 20% off of blackout rate</discount>
@@ -39,15 +43,17 @@
     <company>
         <id>5</id>
         <name>Clouse Landscaping</name>
+        <category>store</category>
         <location>140 N. 36th Street Terre Haute, IN 47803</location>
         <number>(812) 240-0629</number>
         <discount>Free estimates and 15% off labor costs</discount>
 		<name_image>clouse_landscaping</name_image>
 		<website>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/clouselandscapingbrochure1.pdf</website>
     </company>
-        <company>
+    <company>
         <id>6</id>
         <name>Comfort Inn &amp; Suites-Plainfield</name>
+        <category>hotel</category>
         <location>6107 Cambridge Way Plainfield, IN 46168</location>
         <number>(317) 839-9600</number>
         <discount>Discounted rate of $65 plus tax; Stay, Park &amp; Fly $75 plus tax</discount>
@@ -57,6 +63,7 @@
     <company>
         <id>7</id>
         <name>Drury Inn-Terre Haute</name>
+        <category>hotel</category>
         <location>3040 S. U.S. HWY 41 Terre Haute, IN 47802</location>
         <number>(812) 238-1206</number>
         <discount>Discounted rate: $79.99 plus tax</discount>
@@ -66,6 +73,7 @@
     <company>
         <id>8</id>
         <name>Fifth Third Bank- Main</name>
+        <category>banking</category>
         <location>350 Wabash Avenue Terre Haute, IN 47807</location>
         <number>(812) 462-0222</number>
         <discount>N/A</discount>
@@ -75,6 +83,7 @@
     <company>
         <id>9</id>
         <name>Firestone Tire &amp; Service Center</name>
+        <category>store</category>
         <location>940 Wabash Avenue Terre Haute, IN 47807</location>
         <number>(812) 232-9478</number>
         <discount>coupon</discount>
@@ -84,6 +93,7 @@
     <company>
         <id>10</id>
         <name>First Financial Bank-Main</name>
+        <category>banking</category>
         <location>One First Financial Plaza Terre Haute, IN 47808</location>
         <number>(812) 238-6000</number>
         <discount>25% discount on Rose-Hulman checks</discount>
@@ -93,6 +103,7 @@
     <company>
         <id>11</id>
         <name>Grease Monkey-Wabash</name>
+        <category>store</category>
         <location>2501 Wabash Avenue Terre Haute, IN 47803</location>
         <number>(812) 234-5448</number>
         <discount>Discount of $3 off any oil change</discount>
@@ -102,6 +113,7 @@
     <company>
         <id>12</id>
         <name>Hampton Inn</name>
+        <category>hotel</category>
         <location>3325 S. U.S. HWY 41 Terre Haute, IN 47802</location>
         <number>(812) 242-2222</number>
         <discount>Discount room rate of $89</discount>
@@ -111,6 +123,7 @@
     <company>
         <id>13</id>
         <name>Hilton Garden Inn, Terre Haute House</name>
+        <category>hotel</category>
         <location>750 Wabash Avenue Terre Haute, IN 47807</location>
         <number>(812) 234-8900</number>
         <discount>$109.00 room rate</discount>
@@ -120,6 +133,7 @@
     <company>
         <id>14</id>
         <name>Holiday Inn Express &amp; Suites</name>
+        <category>hotel</category>
         <location>2645 S. Joe Fox Street Terre Haute, IN 47803</location>
         <number>(812) 234-3200</number>
         <discount>N/A</discount>
@@ -129,6 +143,7 @@
     <company>
         <id>15</id>
         <name>Holiday Inn of Terre Haute</name>
+        <category>hotel</category>
         <location>3300 S. U.S. HWY 41 Terre Haute, IN 47802</location>
         <number>(812) 232-6081</number>
         <discount>$89 rate and hot brekfast for two</discount>
@@ -138,6 +153,7 @@
     <company>
         <id>16</id>
         <name>Indy Park Ride &amp; Fly</name>
+        <category>entertainment</category>
         <location>3875 Plainfield Road Indianapolis, IN 46231</location>
         <number>(317) 486-8000</number>
         <discount>see flyer..</discount>
@@ -147,6 +163,7 @@
     <company>
         <id>17</id>
         <name>J. Ford's Black Angus, Inc.</name>
+        <category>restaurant</category>
         <location>502 S. 3rd Street Terre Haute, IN 47807</location>
         <number>(812) 235-5549</number>
         <discount>Free dessert with order of an entrée</discount>
@@ -156,6 +173,7 @@
     <company>
         <id>18</id>
         <name>LaQuinta Inns &amp; Suites-Plainfield</name>
+        <category>hotel</category>
         <location>2251 Manchester Drive Plainfield, IN 46168</location>
         <number>(317) 279-2650</number>
         <discount>Discounted rate of $75 plus tax; Stay. Park &amp; Fly $85 plus tax</discount>
@@ -165,6 +183,7 @@
     <company>
         <id>19</id>
         <name>Logan's Ribeye</name>
+        <category>restaurant</category>
         <location>100 S. Fruitridge Avenue Terre Haute, IN 47803</location>
         <number>(812) 235-9197</number>
         <discount>5% off total check</discount>
@@ -174,6 +193,7 @@
     <company>
         <id>20</id>
         <name>M.Moggers Brewery</name>
+        <category>entertainment</category>
         <location>908 Poplar Street Terre Haute, IN 47807</location>
         <number>(812) 234-9202</number>
         <discount>10% discount</discount>
@@ -183,6 +203,7 @@
     <company>
         <id>21</id>
         <name>Pacesetter Sports</name>
+        <category>store</category>
         <location>2831 S. 3rd Street Terre Haute, IN 47802</location>
         <number>(812) 234-8343</number>
         <discount>10% discount</discount>
@@ -192,6 +213,7 @@
         <company>
         <id>22</id>
         <name>Pear Tree Inn</name>
+        <category>hotel</category>
         <location>3050 Highway 41 South Terre Haute, IN 47802</location>
         <number>(812) 234-4268</number>
         <discount>Discounted rate of $55 plus tax</discount>
@@ -201,6 +223,7 @@
     <company>
         <id>23</id>
         <name>Pizza Hut-Terre Haute</name>
+        <category>restaurant</category>
         <location>3040 Wabash Avenue Terre Haute, IN 47803</location>
         <number>(812) 232-6231</number>
         <discount>N/A</discount>
@@ -210,6 +233,7 @@
     <company>
         <id>24</id>
         <name>Poplar Flower Shop</name>
+        <category>store</category>
         <location>361 S. 18th Street Terre Haute, IN 47807</location>
         <number>(812) 232-3319</number>
         <discount>$5 off cash and carry items</discount>
@@ -219,6 +243,7 @@
     <company>
         <id>25</id>
         <name>Quality Inn-Terre Haute</name>
+        <category>hotel</category>
         <location>555 S. 3rd Street Terre Haute, IN 47807</location>
         <number>(812) 235-3333</number>
         <discount>N/A</discount>
@@ -228,15 +253,17 @@
     <company>
         <id>26</id>
         <name>Rick's Smokehouse &amp; Grill, LLC </name>
+        <category>restaurant</category>
         <location>3102 Wabash Avenue Terre Haute, IN 47803</location>
         <number>(812) 235-8335</number>
         <discount>Free extra side with purchase of entrée or combo</discount>
 		<name_image>ricks_smokehouse</name_image>
-		<website>www.rickssmokehouse.com</website>
+		<website>http://www.rickssmokehouse.com</website>
     </company>  
     <company>
         <id>27</id>
         <name>7 &amp; 70 Liquor &amp; World of Wines </name>
+        <category>entertainment</category>
         <location>3305 S. 7th Street Terre Haute, IN 47802</location>
         <number>(812) 232-3003</number>
         <discount>10% in 1/2 case &amp; 15% on case of wine</discount>
@@ -246,6 +273,7 @@
     <company>
         <id>28</id>
         <name>Springhill Suites Marriot </name>
+        <category>hotel</category>
         <location>3304 US Hwy 41 South Terre Haute, IN 47802</location>
         <number>(812) 244-2783</number>
         <discount>$99 rate</discount>
@@ -255,10 +283,11 @@
     <company>
         <id>29</id>
         <name>Stables Steakhouse </name>
+        <category>restaurant</category>
         <location>939 Poplar Street Terre Haute, IN 47807</location>
         <number>(812) 232-6677</number>
         <discount>Free dessert with order of an entrée </discount>
 		<name_image>stables</name_image>
-		<website>www.stablessteakhouse.com</website>
+		<website>http://www.stablessteakhouse.com</website>
     </company>  
 </companyList>

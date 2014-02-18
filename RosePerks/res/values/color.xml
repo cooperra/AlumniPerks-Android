@@ -21,4 +21,10 @@
     <color name="login_screen_text_color">#FFFFFF</color>
     <color name="btn_red_light">#F07379</color>
     <color name="btn_red_dark">#A10810</color>
+    <color name="category_btn_red">#EB0C0C</color>
+    <color name="category_btn_yellow">#FFED26</color>
+    <color name="category_btn_blue">#300CFA</color>
+    <color name="category_btn_green">#26E605</color>
+    <color name="category_btn_purple">#C505E6</color>
+    <color name="category_btn_orange">#F79307</color>
 </resources>
