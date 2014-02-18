@@ -65,9 +65,15 @@ public class CategoryListActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+<<<<<<< HEAD
 //				Intent bankingView = new Intent(getApplicationContext(),
 //						BankingListView.class);
 //				startActivity(bankingView);
+=======
+				Intent bankingView = new Intent(getApplicationContext(),
+						BankingListView.class);
+				startActivity(bankingView);
+>>>>>>> b11ddb5ebf2c4dc60a5c94f1c97167356c193b88
 				
 			}
 		});
@@ -76,9 +82,15 @@ public class CategoryListActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+<<<<<<< HEAD
 //				Intent storesView = new Intent(getApplicationContext(),
 //						StoresListView.class);
 //				startActivity(storesView);
+=======
+				Intent storesView = new Intent(getApplicationContext(),
+						StoresListView.class);
+				startActivity(storesView);
+>>>>>>> b11ddb5ebf2c4dc60a5c94f1c97167356c193b88
 				
 			}
 		});
@@ -87,9 +99,15 @@ public class CategoryListActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+<<<<<<< HEAD
 //				Intent otherView = new Intent(getApplicationContext(),
 //						OtherListView.class);
 //				startActivity(otherView);
+=======
+				Intent otherView = new Intent(getApplicationContext(),
+						OtherListView.class);
+				startActivity(otherView);
+>>>>>>> b11ddb5ebf2c4dc60a5c94f1c97167356c193b88
 				
 			}
 		});

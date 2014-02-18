@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -221,7 +222,13 @@ public class LoginActivity extends Activity {
 				}
 			}
 
-			// TODO: register the new account here.
+			//// TODO: register the new account here.
+			// Instead, we are letting the user in if they have a specific password and ANY username
+			if (mPassword.equals("hello")) {
+				saveSessionKey("TODO_get_real_key");
+				launchMainActivity();
+				return true;
+			}
 			return true;
 		}
 
@@ -253,5 +260,10 @@ public class LoginActivity extends Activity {
 			mAuthTask = null;
 			showProgress(false);
 		}
+	}
+	
+	public void onRoseSTEMButton(View v) {
+		Intent roseSTEMWebsite = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rosestem.rose-hulman.edu/"));
+		startActivity(roseSTEMWebsite);
 	}
 }
