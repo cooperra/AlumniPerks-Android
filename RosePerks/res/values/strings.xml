@@ -11,11 +11,11 @@
     <string name="title_activity_perks_list">All Perks</string>
     <string name="category_string">Category</string>
     <string name="google_map_string">Google Maps</string>
-    <string name="help_string">Help</string>
+    <string name="help_string">Alumni Affairs Contact</string>
     <string name="perks_list_string">Perks List</string>
-    <string name="help_message">The purpose of this app is to display the perk you wish to use in order to get a discount at an establishment.</string>
+    <string name="help_message">5500 Wabash Avenue\n\nTerre Haute, IN 47803\n\n(812)877_8976\n\nwww.alumni.rose-hulman.edu</string>
     <string name="ok">OK</string>
-    <string name="help_title">Need Assistance?</string>
+    <string name="help_title">Rose-Hulman Office of Alumni Affairs</string>
     <string name="restaurant">Restaurant</string>
     <string name="hotel">Hotel</string>
     <string name="entertainment">Entertainment</string>
