@@ -56,7 +56,7 @@ public class MainScreenActivity extends FragmentActivity {
 			}
 		});
 		Google_Maps.setOnClickListener(new OnClickListener() {
-
+			
 			@Override
 			public void onClick(View v) {
 				Intent browserIntent =  

@@ -78,17 +78,6 @@
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"
                 android:text="@string/action_sign_in_register" />
-
-            <Button
-                android:id="@+id/rosestem_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginTop="16dp"
-                android:paddingLeft="32dp"
-                android:paddingRight="32dp"
-                android:text="@string/action_rosestem"
-                android:onClick="onRoseSTEMButton" />
         </LinearLayout>
     </ScrollView>
 

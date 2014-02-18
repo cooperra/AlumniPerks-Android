@@ -7,7 +7,6 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -19,7 +18,6 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -33,12 +31,10 @@
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.PerksListView"
-            android:label="@string/title_activity_perks_list"
-            android:parentActivityName="edu.rosehulman.roseperks.MainScreenActivity" >
+            android:label="@string/title_activity_perks_list" >
         </activity>
         <activity
             android:name="edu.rosehulman.roseperks.RestaurantListView"
-<<<<<<< HEAD
             android:label="@string/title_activity_restaurant_list" >
         </activity>
         <activity
@@ -48,51 +44,17 @@
         <activity
             android:name="edu.rosehulman.roseperks.CategoryListActivity"
             android:label="@string/title_activity_categories" >
-=======
-            android:label="@string/title_activity_restaurant_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
         </activity>
         <activity
-            android:name="edu.rosehulman.roseperks.EntertainmentListView"
-            android:label="@string/title_activity_entertainment_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
-        </activity>
-        <activity
-            android:name="edu.rosehulman.roseperks.HotelListView"
-            android:label="@string/title_activity_hotel_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
-        </activity>
-        <activity
-            android:name="edu.rosehulman.roseperks.BankingListView"
-            android:label="@string/title_activity_banking_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
-        </activity>
-        <activity
-            android:name="edu.rosehulman.roseperks.StoresListView"
-            android:label="@string/title_activity_stores_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
->>>>>>> b11ddb5ebf2c4dc60a5c94f1c97167356c193b88
-        </activity>
-        <activity
-            android:name="edu.rosehulman.roseperks.OtherListView"
-            android:label="@string/title_activity_other_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
-        </activity>
-        <activity
-            android:name="edu.rosehulman.roseperks.CategoryListActivity"
-            android:label="@string/title_activity_categories"
-            android:parentActivityName="edu.rosehulman.roseperks.MainScreenActivity" >
-        </activity>
-        <activity android:name="edu.rosehulman.roseperks.TestDatabaseActivity" >
+            android:name="edu.rosehulman.roseperks.TestDatabaseActivity" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+    			<action android:name="android.intent.action.MAIN" />
+    			<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+    	</activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> 
 
 </manifest>

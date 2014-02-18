@@ -43,9 +43,7 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:soundEffectsEnabled="true"
-            android:background="@color/category_btn_blue"
-            android:src="@drawable/bank" />
+            android:background="@drawable/bars" />
     </LinearLayout>
 
     <LinearLayout
