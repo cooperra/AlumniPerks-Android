@@ -22,7 +22,6 @@ public class CategoryListActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_categories);
 		Restaurant = (ImageButton) findViewById(R.id.restaurant_cat);
-		Entertainment = (ImageButton) findViewById(R.id.entertainment_cat);
 		Hotel = (ImageButton) findViewById(R.id.hotel_cat);
 		Banking = (ImageButton) findViewById(R.id.banking_cat);
 		Stores = (ImageButton) findViewById(R.id.stores_cat);
@@ -35,17 +34,6 @@ public class CategoryListActivity extends Activity {
 				Intent restaurantView = new Intent(getApplicationContext(),
 						RestaurantListView.class);
 				startActivity(restaurantView);
-				
-			}
-		});
-		
-		Entertainment.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent entertainmentView = new Intent(getApplicationContext(),
-						EntertainmentListView.class);
-				startActivity(entertainmentView);
 				
 			}
 		});

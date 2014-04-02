@@ -15,14 +15,10 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/restaurant" />
+            android:scaleType="centerInside"
+            android:background="@null"
+            android:src="@drawable/category_129091_simple_red_square_icon_food_beverage_knife_fork2" />
 
-        <ImageButton
-            android:id="@+id/entertainment_cat"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/entertainment" />
     </LinearLayout>
 
     <LinearLayout
@@ -36,16 +32,18 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/hotel" />
+            android:scaleType="centerInside"
+            android:background="@null"
+            android:src="@drawable/category_129300_simple_red_square_icon_people_things_bed1_sc43" />
 
         <ImageButton
             android:id="@+id/banking_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:soundEffectsEnabled="true"
-            android:background="@color/category_btn_blue"
-            android:src="@drawable/bank" />
+            android:scaleType="centerInside"
+            android:background="@null"
+            android:src="@drawable/category_128579_simple_red_square_icon_business_dollar_solid" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,14 +57,18 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/stores" />
+            android:scaleType="centerInside"
+            android:background="@null"
+            android:src="@drawable/category_128520_simple_red_square_icon_business_cart_7dots" />
 
         <ImageButton
             android:id="@+id/other_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/other" />
+            android:scaleType="centerInside"
+            android:background="@null"
+            android:src="@drawable/category_129921_simple_red_square_icon_symbols_shapes_spinner1" />
     </LinearLayout>
 
 </LinearLayout>
