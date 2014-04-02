@@ -93,19 +93,25 @@ public class PerksListView extends Activity {
 			@Override
 			public void onNetworkProblem(IOException e) {
 				super.onNetworkProblem(e);
-				// TODO: show toaster notification
+				// show toaster notification
+				Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_refresh_network_problem, Toast.LENGTH_SHORT);
+				toast.show();
 			}
 
 			@Override
 			public void onNonOKHttpResponse(HttpResponseException e) {
 				super.onNonOKHttpResponse(e);
-				//TODO: show toaster notification
+				// show toaster notification
+				Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_refresh_server_problem, Toast.LENGTH_SHORT);
+				toast.show();
 			}
 
 			@Override
 			public void onNoConnection(NetworkDisconnectedException e) {
 				super.onNoConnection(e);
-				//TODO: show toaster notification
+				// show toaster notification
+				Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_refresh_no_connection, Toast.LENGTH_SHORT);
+				toast.show();
 			}
 
 			@Override
