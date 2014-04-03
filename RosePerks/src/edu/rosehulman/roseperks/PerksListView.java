@@ -275,9 +275,6 @@ public class PerksListView extends Activity {
 				
 				startActivity(i);
 				
-//				Intent browserIntent =  
-//						new Intent(Intent.ACTION_VIEW, Uri.parse(perksListCollection.get(position).get(KEY_WEBSITE)));
-//				startActivity(browserIntent);
 			}
 
 		});
