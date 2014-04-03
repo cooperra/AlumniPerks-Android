@@ -67,6 +67,11 @@
             android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
         </activity>
         <activity
+            android:name="edu.rosehulman.roseperks.PerksDetailView"
+            android:label="@string/title_activity_detail_list">
+            
+        </activity>
+        <activity
             android:name="edu.rosehulman.roseperks.CategoryListActivity"
             android:label="@string/title_activity_categories"
             android:parentActivityName="edu.rosehulman.roseperks.MainScreenActivity" >

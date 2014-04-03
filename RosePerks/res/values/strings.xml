@@ -28,6 +28,7 @@
     <string name="title_activity_hotel_list">Hotel Perks</string>
     <string name="title_activity_banking_list">Banking Perks</string>
     <string name="title_activity_stores_list">Stores Perks</string>
+    <string name="title_activity_detail_list">Detail View</string>
     <string name="title_activity_other_list">Miscellaneous Perks</string>
     <string name="action_refresh">Refresh Perks</string>
     <string name="toast_refresh_done">Done!</string>

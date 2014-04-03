@@ -2,6 +2,7 @@ package edu.rosehulman.roseperks;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -49,7 +50,9 @@ public class PerksDetailView extends Activity {
 			
 		});
 		
-		int id = getResources().getIdentifier("drawable-ldpi/" + perk_image, null, null);
+//		String uri = "@drawable/" + perk_image + ".jpg";
+		int id = getResources().getIdentifier(perk_image, "drawable", this.getPackageName());
+//		Drawable res = getResources().getDrawable(id);
 		image.setImageResource(id);
 	}
 }
