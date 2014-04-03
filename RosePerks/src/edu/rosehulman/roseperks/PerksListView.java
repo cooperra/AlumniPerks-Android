@@ -258,23 +258,26 @@ public class PerksListView extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
-//					Intent i = new Intent();
-//					i.setClass(PerksListView.this, PerksAdapter.class);
-//					i.putExtra("position", String.valueOf(position + 1));
-//					i.putExtra("name",
-//							perksListCollection.get(position).get(KEY_NAME));
-//					i.putExtra("location", perksListCollection.get(position)
-//							.get(KEY_LOCATION));
-//					i.putExtra("number",
-//							perksListCollection.get(position).get(KEY_NUMBER));
-//					i.putExtra("discount", perksListCollection.get(position)
-//							.get(KEY_DISCOUNT));
-//					i.putExtra("name_image", perksListCollection.get(position)
-//							.get(KEY_NAME_IMAGE));
-//					startActivity(i);
-				Intent browserIntent =  
-						new Intent(Intent.ACTION_VIEW, Uri.parse(perksListCollection.get(position).get(KEY_WEBSITE)));
-				startActivity(browserIntent);
+				Intent i = new Intent(PerksListView.this, PerksDetailView.class);
+				String name = perksListCollection.get(position).get(KEY_NAME);
+				String location = perksListCollection.get(position).get(KEY_LOCATION);
+				String number= perksListCollection.get(position).get(KEY_NUMBER);
+				String discount = perksListCollection.get(position).get(KEY_DISCOUNT);
+				String website =perksListCollection.get(position).get(KEY_WEBSITE);
+				String image =perksListCollection.get(position).get(KEY_NAME_IMAGE);
+				
+				i.putExtra("name", name);
+				i.putExtra("location", location);
+				i.putExtra("number", number);
+				i.putExtra("discount", discount);
+				i.putExtra("website", website);
+				i.putExtra("image", image);
+				
+				startActivity(i);
+				
+//				Intent browserIntent =  
+//						new Intent(Intent.ACTION_VIEW, Uri.parse(perksListCollection.get(position).get(KEY_WEBSITE)));
+//				startActivity(browserIntent);
 			}
 
 		});
