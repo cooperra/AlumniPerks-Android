@@ -80,8 +80,9 @@ public class PerkStorage extends Activity {
     public static class NetworkDisconnectedException extends Exception {}
     
     public static abstract class PerkUpdateTask extends AsyncTask<Void, Void, Boolean> {
-    	
-    	public boolean success = false;
+    	private static enum ExitStatus {NORMAL, NETWORK_PROBLEM, NON_OK_HTTP_RESPONSE, NETWORK_DISCONNECTED}
+    	private Exception exception = null;
+    	private ExitStatus exitStatus = ExitStatus.NORMAL;
     	
     	/**
     	 * Attempts to download fresh perk data and save it to internal storage
@@ -146,17 +147,21 @@ public class PerkStorage extends Activity {
 
 		@Override
 		protected Boolean doInBackground(Void... params) {
-			this.success = false;
+			boolean success = false;
 			
 			try {
 				success = update();
 			} catch (IOException e) {
-				onNetworkProblem(e);
+				this.exception = e;
+				this.exitStatus = ExitStatus.NETWORK_PROBLEM;
 			} catch (HttpResponseException e) {
-				onNonOKHttpResponse(e);
+				this.exception = e;
+				this.exitStatus = ExitStatus.NON_OK_HTTP_RESPONSE;
 			} catch (NetworkDisconnectedException e) {
-				onNoConnection(e);
+				this.exception = e;
+				this.exitStatus = ExitStatus.NETWORK_DISCONNECTED;
 			}
+			
 			return success;
 		}
     	
@@ -175,6 +180,25 @@ public class PerkStorage extends Activity {
 		public void onNoConnection(NetworkDisconnectedException e) {
 			Log.d(PerkStorage.class.getSimpleName(), "Perk update attempted while network disconnected.");
 			e.printStackTrace();
+		}
+		
+		protected void onPostExecute(Boolean result) {
+			switch (this.exitStatus) {
+			case NORMAL:
+				break;
+			case NETWORK_DISCONNECTED:
+				onNoConnection((NetworkDisconnectedException) this.exception);
+				break;
+			case NETWORK_PROBLEM:
+				onNetworkProblem((IOException) this.exception);
+				break;
+			case NON_OK_HTTP_RESPONSE:
+				onNonOKHttpResponse((HttpResponseException) this.exception);
+				break;
+			}
+			if (result) {
+				Log.d(PerkStorage.class.getSimpleName(), "Perk update successful.");
+			}
 		}
     }
 }
