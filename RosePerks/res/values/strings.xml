@@ -32,7 +32,7 @@
     <string name="action_refresh">Refresh Perks</string>
     <string name="toast_refresh_done">Done!</string>
     <string name="toast_refresh_no_connection">No connection!</string>
-    <string name="toast_refresh_server_problem">Communication issue.\nMake sure you\'ve updated to the latest version and try again.</string>
+    <string name="toast_refresh_server_problem">Communication issue.\nMake sure you\'ve updated the app to the latest version and try again.</string>
     <string name="toast_refresh_network_problem">Network problem. Try again.</string>
 
 </resources>

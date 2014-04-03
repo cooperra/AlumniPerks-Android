@@ -110,7 +110,7 @@ public class PerksListView extends Activity {
 			public void onNoConnection(NetworkDisconnectedException e) {
 				super.onNoConnection(e);
 				// show toaster notification
-				Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_refresh_no_connection, Toast.LENGTH_SHORT);
+				Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_refresh_no_connection, Toast.LENGTH_LONG);
 				toast.show();
 			}
 
