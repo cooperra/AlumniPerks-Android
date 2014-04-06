@@ -146,13 +146,58 @@ public class PerksListView extends Activity {
 	 * Populates the ListView with perks from the XML
 	 */
 	private void loadPerks() {
+		ArrayList<HashMap<String, String>> parsedXML = parsePerkXML();
+		if (parsedXML == null) {
+			return;
+		} else {
+			perksListCollection = parsedXML;
+		}
+		PerksAdapter adapter = new PerksAdapter(this, perksListCollection);
+
+		list = (ListView) findViewById(R.id.list);
+
+		list.setAdapter(adapter);
+
+		list.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View v,
+					int position, long id) {
+				Intent i = new Intent(PerksListView.this, PerksDetailView.class);
+				String name = perksListCollection.get(position).get(KEY_NAME);
+				String location = perksListCollection.get(position).get(KEY_LOCATION);
+				String number= perksListCollection.get(position).get(KEY_NUMBER);
+				String discount = perksListCollection.get(position).get(KEY_DISCOUNT);
+				String website =perksListCollection.get(position).get(KEY_WEBSITE);
+				String image =perksListCollection.get(position).get(KEY_NAME_IMAGE);
+				
+				i.putExtra("name", name);
+				i.putExtra("location", location);
+				i.putExtra("number", number);
+				i.putExtra("discount", discount);
+				i.putExtra("website", website);
+				i.putExtra("image", image);
+				
+				startActivity(i);
+				
+			}
+
+		});
+		
+		if (list.getChildCount() > 0) {
+			hideRetryButton();
+		}
+	}
+
+	private ArrayList<HashMap<String, String>> parsePerkXML() {
+		// TODO: tidy extracted code
 		FileInputStream file = PerkStorage.getXMLFile(this);
 		if (file == null) {
 			Log.e(PerksListView.class.getSimpleName(), "File not found");
-			return;
+			return null;
 		}
 
-		perksListCollection = new ArrayList<HashMap<String, String>>();
+		ArrayList<HashMap<String, String>> perksListCollection = new ArrayList<HashMap<String, String>>();
 		
 		try {
 
@@ -247,41 +292,7 @@ public class PerksListView extends Activity {
 				Log.e("Error", "Problem closing file", e);
 			}
 		}
-		PerksAdapter adapter = new PerksAdapter(this, perksListCollection);
-
-		list = (ListView) findViewById(R.id.list);
-
-		list.setAdapter(adapter);
-
-		list.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View v,
-					int position, long id) {
-				Intent i = new Intent(PerksListView.this, PerksDetailView.class);
-				String name = perksListCollection.get(position).get(KEY_NAME);
-				String location = perksListCollection.get(position).get(KEY_LOCATION);
-				String number= perksListCollection.get(position).get(KEY_NUMBER);
-				String discount = perksListCollection.get(position).get(KEY_DISCOUNT);
-				String website =perksListCollection.get(position).get(KEY_WEBSITE);
-				String image =perksListCollection.get(position).get(KEY_NAME_IMAGE);
-				
-				i.putExtra("name", name);
-				i.putExtra("location", location);
-				i.putExtra("number", number);
-				i.putExtra("discount", discount);
-				i.putExtra("website", website);
-				i.putExtra("image", image);
-				
-				startActivity(i);
-				
-			}
-
-		});
-		
-		if (list.getChildCount() > 0) {
-			hideRetryButton();
-		}
+		return perksListCollection;
 	}
 
 	protected void showProgressView() {
