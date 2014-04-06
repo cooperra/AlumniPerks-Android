@@ -54,7 +54,7 @@ public class PerksListView extends Activity {
 
 	ListView list;
 	PerksAdapter adapter;
-	List<HashMap<String, String>> perksListCollection;
+	List<Perk> perksListCollection;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -146,7 +146,7 @@ public class PerksListView extends Activity {
 	 * Populates the ListView with perks from the XML
 	 */
 	private void loadPerks() {
-		ArrayList<HashMap<String, String>> parsedXML = parsePerkXML();
+		ArrayList<Perk> parsedXML = parsePerkXML();
 		if (parsedXML == null) {
 			return;
 		} else {
@@ -164,12 +164,12 @@ public class PerksListView extends Activity {
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
 				Intent i = new Intent(PerksListView.this, PerksDetailView.class);
-				String name = perksListCollection.get(position).get(KEY_NAME);
-				String location = perksListCollection.get(position).get(KEY_LOCATION);
-				String number= perksListCollection.get(position).get(KEY_NUMBER);
-				String discount = perksListCollection.get(position).get(KEY_DISCOUNT);
-				String website =perksListCollection.get(position).get(KEY_WEBSITE);
-				String image =perksListCollection.get(position).get(KEY_NAME_IMAGE);
+				String name = perksListCollection.get(position).getCompanyName();
+				String location = perksListCollection.get(position).getCompanyAddress();
+				String number= perksListCollection.get(position).getCompanyPhone();
+				String discount = perksListCollection.get(position).getPerkDescription();
+				String website =perksListCollection.get(position).getPerkWebsite();
+				String image =perksListCollection.get(position).getPerkImage();
 				
 				i.putExtra("name", name);
 				i.putExtra("location", location);
@@ -189,7 +189,7 @@ public class PerksListView extends Activity {
 		}
 	}
 
-	private ArrayList<HashMap<String, String>> parsePerkXML() {
+	private ArrayList<Perk> parsePerkXML() {
 		// TODO: tidy extracted code
 		FileInputStream file = PerkStorage.getXMLFile(this);
 		if (file == null) {
@@ -197,7 +197,7 @@ public class PerksListView extends Activity {
 			return null;
 		}
 
-		ArrayList<HashMap<String, String>> perksListCollection = new ArrayList<HashMap<String, String>>();
+		ArrayList<Perk> perksListCollection = new ArrayList<Perk>();
 		
 		try {
 
@@ -217,7 +217,7 @@ public class PerksListView extends Activity {
 
 				for (int i = 0; i < len; i++) {
 
-					HashMap<String, String> map = new HashMap<String, String>();
+					Perk perk = new Perk();
 
 					Node firstPerksNode = perksList.item(i);
 
@@ -227,14 +227,14 @@ public class PerksListView extends Activity {
 							.getElementsByTagName(KEY_ID);
 					Element firstIdElement = (Element) idList.item(0);
 					NodeList textIdList = firstIdElement.getChildNodes();
-					map.put(KEY_ID, ((Node) textIdList.item(0)).getNodeValue()
-							.trim());
+					perk.setId(Long.parseLong( ((Node) textIdList.item(0)).getNodeValue()
+							.trim()) );
 
 					NodeList nameList = firstPerksElement
 							.getElementsByTagName(KEY_NAME);
 					Element firstNameElement = (Element) nameList.item(0);
 					NodeList textNameList = firstNameElement.getChildNodes();
-					map.put(KEY_NAME, ((Node) textNameList.item(0))
+					perk.setCompanyName( ((Node) textNameList.item(0))
 							.getNodeValue().trim());
 
 					NodeList locationList = firstPerksElement
@@ -243,7 +243,7 @@ public class PerksListView extends Activity {
 							.item(0);
 					NodeList textLocationList = firstLocationElement
 							.getChildNodes();
-					map.put(KEY_LOCATION, ((Node) textLocationList.item(0))
+					perk.setCompanyAddress( ((Node) textLocationList.item(0))
 							.getNodeValue().trim());
 
 					NodeList numberList = firstPerksElement
@@ -251,7 +251,7 @@ public class PerksListView extends Activity {
 					Element firstNumberElement = (Element) numberList.item(0);
 					NodeList textNumberList = firstNumberElement
 							.getChildNodes();
-					map.put(KEY_NUMBER, ((Node) textNumberList.item(0))
+					perk.setCompanyPhone( ((Node) textNumberList.item(0))
 							.getNodeValue().trim());
 
 					NodeList discountList = firstPerksElement
@@ -260,24 +260,24 @@ public class PerksListView extends Activity {
 							.item(0);
 					NodeList textDiscountList = firstDiscountElement
 							.getChildNodes();
-					map.put(KEY_DISCOUNT, ((Node) textDiscountList.item(0))
+					perk.setPerkDescription( ((Node) textDiscountList.item(0))
 							.getNodeValue().trim());
 
 					NodeList imageList = firstPerksElement
 							.getElementsByTagName(KEY_NAME_IMAGE);
 					Element firstImageElement = (Element) imageList.item(0);
 					NodeList textImageList = firstImageElement.getChildNodes();
-					map.put(KEY_NAME_IMAGE, ((Node) textImageList.item(0))
+					perk.setPerkImage( ((Node) textImageList.item(0))
 							.getNodeValue().trim());
 					
 					NodeList websiteList = firstPerksElement
 							.getElementsByTagName(KEY_WEBSITE);
 					Element firstWebsiteElement = (Element) websiteList.item(0);
 					NodeList textWebsiteList = firstWebsiteElement.getChildNodes();
-					map.put(KEY_WEBSITE, ((Node) textWebsiteList.item(0))
+					perk.setPerkWebsite( ((Node) textWebsiteList.item(0))
 							.getNodeValue().trim());
 
-					perksListCollection.add(map);
+					perksListCollection.add(perk);
 
 				}
 			}

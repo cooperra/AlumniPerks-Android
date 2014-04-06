@@ -24,13 +24,14 @@ public class PerksAdapter extends BaseAdapter {
 	static final String KEY_NAME_IMAGE = "name_image";
 	LayoutInflater inflater;
 	ImageView imagePerk;
-	List<HashMap<String,String>> perkListCollection;
+	List<Perk> perkListCollection;
 	ViewHolder holder;
 	
 	public PerksAdapter(){
 		
 	}
-	public PerksAdapter(Activity a, List<HashMap<String, String>> d){
+	
+	public PerksAdapter(Activity a, List<Perk> d){
 		this.perkListCollection = d;
 		inflater = (LayoutInflater)a.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
@@ -67,13 +68,13 @@ public class PerksAdapter extends BaseAdapter {
 			holder = (ViewHolder)vi.getTag();
 		}
 		//Setting up the values of Text
-		holder.tvname.setText(perkListCollection.get(position).get(KEY_NAME));
-		holder.tvlocation.setText(perkListCollection.get(position).get(KEY_LOCATION));
-		holder.tvnumber.setText(perkListCollection.get(position).get(KEY_NUMBER));
-		holder.tvdiscount.setText(perkListCollection.get(position).get(KEY_DISCOUNT));
+		holder.tvname.setText(perkListCollection.get(position).getCompanyName());
+		holder.tvlocation.setText(perkListCollection.get(position).getCompanyAddress());
+		holder.tvnumber.setText(perkListCollection.get(position).getCompanyPhone());
+		holder.tvdiscount.setText(perkListCollection.get(position).getPerkDescription());
 		
 		//Setting up the image
-		String uri = "drawable/"+ perkListCollection.get(position).get(KEY_NAME_IMAGE);
+		String uri = "drawable/"+ perkListCollection.get(position).getPerkImage();
 		int imageResource = vi.getContext().getApplicationContext().getResources().getIdentifier(
 		   uri, null, vi.getContext().getApplicationContext().getPackageName());
 		Drawable image = vi.getContext().getResources().getDrawable(imageResource);
