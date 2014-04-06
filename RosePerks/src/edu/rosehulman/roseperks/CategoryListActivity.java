@@ -32,7 +32,8 @@ public class CategoryListActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent restaurantView = new Intent(getApplicationContext(),
-						RestaurantListView.class);
+						PerksListView.class);
+				restaurantView.putExtra("category", "restaurant");
 				startActivity(restaurantView);
 				
 			}
@@ -43,7 +44,8 @@ public class CategoryListActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent hotelView = new Intent(getApplicationContext(),
-						HotelListView.class);
+						PerksListView.class);
+				hotelView.putExtra("category", "hotel");
 				startActivity(hotelView);
 				
 			}
@@ -54,7 +56,8 @@ public class CategoryListActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent bankingView = new Intent(getApplicationContext(),
-						BankingListView.class);
+						PerksListView.class);
+				bankingView.putExtra("category", "banking");
 				startActivity(bankingView);
 				
 			}
@@ -65,7 +68,8 @@ public class CategoryListActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent storesView = new Intent(getApplicationContext(),
-						StoresListView.class);
+						PerksListView.class);
+				storesView.putExtra("category", "store");
 				startActivity(storesView);
 				
 			}
@@ -76,7 +80,8 @@ public class CategoryListActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent otherView = new Intent(getApplicationContext(),
-						OtherListView.class);
+						PerksListView.class);
+				otherView.putExtra("category", "other");
 				startActivity(otherView);
 				
 			}
