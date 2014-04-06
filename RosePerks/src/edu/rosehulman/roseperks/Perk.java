@@ -8,6 +8,7 @@ public class Perk {
 	private String perk_description;
 	private String perk_image;
 	private String perk_website;
+	private String perk_category;
 
 	public long getId() {
 		return id;
@@ -63,6 +64,14 @@ public class Perk {
 
 	public void setPerkWebsite(String perk_website) {
 		this.perk_website = perk_website;
+	}
+
+	public String getPerkCategory() {
+		return perk_category;
+	}
+
+	public void setPerkCategory(String perk_category) {
+		this.perk_category = perk_category;
 	}
 
 	// Will be used by the ArrayAdapter in the ListView

@@ -51,15 +51,24 @@ public class PerksListView extends Activity {
 	static final String KEY_DISCOUNT = "discount";
 	static final String KEY_NAME_IMAGE = "name_image";
 	static final String KEY_WEBSITE = "website";
+	static final String KEY_CATEGORY = "category";
 
 	ListView list;
 	PerksAdapter adapter;
 	List<Perk> perksListCollection;
+	private String categoryFilter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_perks_list_items);
+
+		Intent i = getIntent();
+		categoryFilter = i.getStringExtra("category"); //TODO support more complex filters
+		// categoryFilter is null if there is no filter
+		if (categoryFilter != null) {
+			this.setTitle(categoryFilter);
+		}
 
 	    if (PerkStorage.isEmpty(this)) {
 	    	// attempt to refresh perks
@@ -150,6 +159,15 @@ public class PerksListView extends Activity {
 		if (parsedXML == null) {
 			return;
 		} else {
+			// filter perks by category if needed
+			if (categoryFilter != null) {
+				for (int i=0; i < parsedXML.size(); i++) {
+					if (!categoryFilter.equals(parsedXML.get(i).getPerkCategory())) {
+						parsedXML.remove(i);
+						i--;
+					}
+				}
+			}
 			perksListCollection = parsedXML;
 		}
 		PerksAdapter adapter = new PerksAdapter(this, perksListCollection);
@@ -235,6 +253,14 @@ public class PerksListView extends Activity {
 					Element firstNameElement = (Element) nameList.item(0);
 					NodeList textNameList = firstNameElement.getChildNodes();
 					perk.setCompanyName( ((Node) textNameList.item(0))
+							.getNodeValue().trim());
+
+					// TODO: allow many categories
+					NodeList categoryList = firstPerksElement
+							.getElementsByTagName(KEY_CATEGORY);
+					Element firstCategoryElement = (Element) categoryList.item(0);
+					NodeList textCategoryList = firstCategoryElement.getChildNodes();
+					perk.setPerkCategory( ((Node) textCategoryList.item(0))
 							.getNodeValue().trim());
 
 					NodeList locationList = firstPerksElement
