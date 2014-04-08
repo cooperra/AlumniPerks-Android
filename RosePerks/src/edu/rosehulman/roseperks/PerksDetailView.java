@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class PerksDetailView extends Activity {
@@ -24,6 +25,7 @@ public class PerksDetailView extends Activity {
 		TextView number = (TextView) findViewById(R.id.perk_number_detail);
 		TextView discount = (TextView) findViewById(R.id.perk_discount_detail);
 		Button website = (Button) findViewById(R.id.perk_website_detail);
+		LinearLayout background = (LinearLayout) findViewById(R.id.perk_background_detail);
 		
 		Intent i = getIntent();
 		String perk_name = i.getStringExtra("name");
@@ -32,11 +34,18 @@ public class PerksDetailView extends Activity {
 		String perk_discount = i.getStringExtra("discount");
 		final String perk_website = i.getStringExtra("website");
 		String perk_image = i.getStringExtra("image");
+		String perk_category = i.getStringExtra("category");
 		
 		name.setText(perk_name);
 		location.setText(perk_location);
 		number.setText(perk_number);
 		discount.setText(perk_discount);
+		
+    	String uri = "drawable-ldpi/" + perk_category + "_background";
+    	int imageViewResource = getResources().getIdentifier(uri, null, getPackageName());
+    	Drawable dimgView = getResources().getDrawable(imageViewResource);
+		
+    	background.setBackground(dimgView);
 		
 		website.setOnClickListener(new OnClickListener() {
 

@@ -188,6 +188,7 @@ public class PerksListView extends Activity {
 				String discount = perksListCollection.get(position).getPerkDescription();
 				String website =perksListCollection.get(position).getPerkWebsite();
 				String image =perksListCollection.get(position).getPerkImage();
+				String category = perksListCollection.get(position).getPerkCategory();
 				
 				i.putExtra("name", name);
 				i.putExtra("location", location);
@@ -195,6 +196,7 @@ public class PerksListView extends Activity {
 				i.putExtra("discount", discount);
 				i.putExtra("website", website);
 				i.putExtra("image", image);
+				i.putExtra("category", category);
 				
 				startActivity(i);
 				
