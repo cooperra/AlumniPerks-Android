@@ -41,11 +41,8 @@ public class PerksDetailView extends Activity {
 		number.setText(perk_number);
 		discount.setText(perk_discount);
 		
-    	String uri = "drawable-ldpi/" + perk_category + "_background";
-    	int imageViewResource = getResources().getIdentifier(uri, null, getPackageName());
-    	Drawable dimgView = getResources().getDrawable(imageViewResource);
-		
-    	background.setBackground(dimgView);
+		int perk_background = getResources().getIdentifier(perk_category, "drawable", this.getPackageName());
+		background.setBackgroundResource(perk_background);
 		
 		website.setOnClickListener(new OnClickListener() {
 
