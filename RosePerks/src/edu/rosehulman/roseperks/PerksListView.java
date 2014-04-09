@@ -52,6 +52,7 @@ public class PerksListView extends Activity {
 	static final String KEY_NAME_IMAGE = "name_image";
 	static final String KEY_WEBSITE = "website";
 	static final String KEY_CATEGORY = "category";
+	static final String KEY_COUPON = "coupon";
 
 	ListView list;
 	PerksAdapter adapter;
@@ -189,6 +190,7 @@ public class PerksListView extends Activity {
 				String website =perksListCollection.get(position).getPerkWebsite();
 				String image =perksListCollection.get(position).getPerkImage();
 				String category = perksListCollection.get(position).getPerkCategory();
+				String coupon = perksListCollection.get(position).getPerkCoupon();
 				
 				i.putExtra("name", name);
 				i.putExtra("location", location);
@@ -197,6 +199,7 @@ public class PerksListView extends Activity {
 				i.putExtra("website", website);
 				i.putExtra("image", image);
 				i.putExtra("category", category);
+				i.putExtra("coupon", coupon);
 				
 				startActivity(i);
 				
@@ -304,6 +307,15 @@ public class PerksListView extends Activity {
 						Element firstWebsiteElement = (Element) websiteList.item(0);
 						NodeList textWebsiteList = firstWebsiteElement.getChildNodes();
 						perk.setPerkWebsite( ((Node) textWebsiteList.item(0))
+								.getNodeValue().trim());
+					}
+					
+					NodeList couponList = firstPerksElement
+							.getElementsByTagName(KEY_COUPON);
+					if (couponList.getLength() > 0) {
+						Element firstCouponElement = (Element) couponList.item(0);
+						NodeList textCouponList = firstCouponElement.getChildNodes();
+						perk.setPerkCoupon( ((Node) textCouponList.item(0))
 								.getNodeValue().trim());
 					}
 
