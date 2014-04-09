@@ -1,5 +1,14 @@
- <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <companyList>
+    <company>
+        <id>27</id>
+        <name>7 &amp; 70 Liquor &amp; World of Wines </name>
+        <category>entertainment</category>
+        <location>3305 S. 7th Street Terre Haute, IN 47802</location>
+        <number>(812) 232-3003</number>
+        <discount>Discount of 10% off 1/2 case of wine or 15% off a full case of wine; Mix &amp; match is acceptable</discount>
+		<name_image>seventhandseven</name_image>
+    </company>        
     <company>
         <id>1</id>
         <name>Asics</name>
@@ -18,7 +27,8 @@
         <number>(812) 238-9963</number>
         <discount>Discounts depend on car rentals and length of rental</discount>
 		<name_image>avis</name_image>
-		<website>http://www.rose-hulman.edu/Users/groups/AdminSvcs/html/TRAVEL/AVIS_Local_Market_Page.pdf</website>
+		<website>http://www.avis.com/</website>
+		<coupon>http://www.rose-hulman.edu/Users/groups/AdminSvcs/html/TRAVEL/AVIS_Local_Market_Page.pdf</coupon>
     </company>
     <company>
         <id>3</id>
@@ -38,7 +48,7 @@
         <number>(812) 240-0629</number>
         <discount>Free estimates, 10% off materials, 15% off labor costs</discount>
 		<name_image>clouse_landscaping</name_image>
-		<website>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/clouselandscapingbrochure1.pdf</website>
+		<coupon>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/clouselandscapingbrochure1.pdf</coupon>
     </company>
     <company>
         <id>5</id>
@@ -48,7 +58,8 @@
         <number>(317) 839-9600</number>
         <discount>Discounted rate of $65 plus tax; Stay, Park &amp; Fly $75 plus tax</discount>
 		<name_image>comfort_inn</name_image>
-		<website>http://www.rose-hulman.edu/Users/groups/AdminSvcs/html/TRAVEL/Comfort%20Inn%202013.pdf</website>
+		<website>http://www.comfortinn.com/</website>
+		<coupon>http://www.rose-hulman.edu/Users/groups/AdminSvcs/html/TRAVEL/Comfort%20Inn%202013.pdf</coupon>
     </company>
     <company>
         <id>6</id>
@@ -58,7 +69,8 @@
         <number>(812) 238-1206</number>
         <discount>Discounted rate: $79.99 plus tax</discount>
 		<name_image>drury_inn</name_image>
-		<website>http://www.druryhotels.com/Reservations.aspx?</website>
+		<website>http://www.druryhotels.com/</website>
+		<coupon>http://www.druryhotels.com/Reservations.aspx?Property=0088&amp;corpid=300226</coupon>
     </company>
     <company>
         <id>7</id>
@@ -69,6 +81,7 @@
         <discount>Personalized Checking Package</discount>
 		<name_image>fifth_third</name_image>
 		<website>https://www.53.com/site</website>
+		<coupon>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/fifththird_page1.pdf</coupon>
     </company>
     <company>
         <id>8</id>
@@ -78,6 +91,7 @@
         <number>(812) 234-5448</number>
         <discount>Discount of $3.00 off any oil change</discount>
         <name_image>grease_monkey</name_image>
+        <website>http://www.greasemonkeyterrehaute526.com/</website>
     </company>
     <company>
         <id>9</id>
@@ -87,6 +101,8 @@
         <number>(317) 241-7275</number>
         <discount>Use Promo Code: 1752207 and Company Name:Rose-Hulman</discount>
         <name_image>fast_park</name_image>
+        <website>http://www.thefastpark.com/</website>
+        <coupon>http://www.thefastpark.com/marketing/indianapolis/ts52corp.html</coupon>
     </company>
     <company>
         <id>10</id>
@@ -97,6 +113,7 @@
         <discount>Alumni Specials for oil change, tire purchase, and service purchase</discount>
 		<name_image>firestone</name_image>
 		<website>http://www.firestonecompleteautocare.com/</website>
+		<coupon>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/firestonefx-0972_rose_hulman_alumni_ad.pdf</coupon>
     </company>
     <company>
         <id>11</id>
@@ -106,7 +123,8 @@
         <number>(812) 238-6000</number>
         <discount>25% discount on any Order of Rose-Hulman Checks</discount>
 		<name_image>first_financial_bank</name_image>
-		<website>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/firstfinancial--checks.pdf</website>
+		<website>https://www.first-online.com/</website>
+		<coupon>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/firstfinancial--checks.pdf</coupon>
     </company>
     <company>
         <id>12</id>
@@ -116,7 +134,8 @@
         <number>(812) 242-2222</number>
         <discount>Discount room rate of $89</discount>
 		<name_image>hampton_inn</name_image>
-		<website>https://secure3.hilton.com/en_US/hp/reservation/book.htm</website>
+		<website>http://hamptoninn3.hilton.com/en/index.html</website>
+		<coupon>https://secure3.hilton.com/en_US/hp/reservation/book.htm?ctyhocn=HUFHHHX&amp;corporateCode=560049206</coupon>
     </company>
     <company>
         <id>13</id>
@@ -177,6 +196,7 @@
         <discount>Discounted rate of $75 plus tax; Stay. Park &amp; Fly $85 plus tax</discount>
 		<name_image>laquinta_inn</name_image>
 		<website>http://www.lq.com/lq/index.jsp</website>
+		<coupon>http://www.rose-hulman.edu/Users/groups/AdminSvcs/html/TRAVEL/Comfort Inn 2013.pdf</coupon>
     </company>     
     <company>
         <id>19</id>
@@ -216,7 +236,8 @@
         <number>(812) 234-4268</number>
         <discount>Discounted rate of $55 plus tax</discount>
 		<name_image>pear_tree_inn</name_image>
-		<website>https://wwwc.druryhotels.com/Reservations.aspx</website>
+		<website>https://wwws.druryhotels.com/</website>
+		<coupon>http://www.druryhotels.com/Reservations.aspx?Property=0087&amp;corpid=300226</coupon>
     </company>     
     <company>
         <id>23</id>
@@ -288,16 +309,6 @@
 		<name_image>ricks_smokehouse</name_image>
 		<website>http://www.rickssmokehouse.com</website>
     </company>  
-    <company>
-        <id>27</id>
-        <name>7 &amp; 70 Liquor &amp; World of Wines </name>
-        <category>entertainment</category>
-        <location>3305 S. 7th Street Terre Haute, IN 47802</location>
-        <number>(812) 232-3003</number>
-        <discount>Discount of 10% off 1/2 case of wine or 15% off a full case of wine; Mix &amp; match is acceptable</discount>
-		<name_image>seventhandseven</name_image>
-		<website>N/A</website>
-    </company>        
     <company>
         <id>28</id>
         <name>Springhill Suites Marriot </name>
