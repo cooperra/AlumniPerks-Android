@@ -300,10 +300,12 @@ public class PerksListView extends Activity {
 					
 					NodeList websiteList = firstPerksElement
 							.getElementsByTagName(KEY_WEBSITE);
-					Element firstWebsiteElement = (Element) websiteList.item(0);
-					NodeList textWebsiteList = firstWebsiteElement.getChildNodes();
-					perk.setPerkWebsite( ((Node) textWebsiteList.item(0))
-							.getNodeValue().trim());
+					if (websiteList.getLength() > 0) {
+						Element firstWebsiteElement = (Element) websiteList.item(0);
+						NodeList textWebsiteList = firstWebsiteElement.getChildNodes();
+						perk.setPerkWebsite( ((Node) textWebsiteList.item(0))
+								.getNodeValue().trim());
+					}
 
 					perksListCollection.add(perk);
 
