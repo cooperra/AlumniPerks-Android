@@ -24,7 +24,8 @@ public class PerksDetailView extends Activity {
 		TextView location = (TextView) findViewById(R.id.perk_location_detail);
 		TextView number = (TextView) findViewById(R.id.perk_number_detail);
 		TextView discount = (TextView) findViewById(R.id.perk_discount_detail);
-		Button website = (Button) findViewById(R.id.perk_website_detail);
+		Button website_button = (Button) findViewById(R.id.perk_website_detail);
+		Button coupon_button = (Button) findViewById(R.id.perk_coupon_detail);
 		LinearLayout background = (LinearLayout) findViewById(R.id.perk_background_detail);
 		
 		Intent i = getIntent();
@@ -35,6 +36,7 @@ public class PerksDetailView extends Activity {
 		final String perk_website = i.getStringExtra("website");
 		String perk_image = i.getStringExtra("image");
 		String perk_category = i.getStringExtra("category");
+		final String perk_coupon = i.getStringExtra("coupon");
 		
 		name.setText(perk_name);
 		location.setText(perk_location);
@@ -44,17 +46,37 @@ public class PerksDetailView extends Activity {
 		int perk_background = getResources().getIdentifier(perk_category, "drawable", this.getPackageName());
 		background.setBackgroundResource(perk_background);
 		
-		website.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent browserIntent =  
-						new Intent(Intent.ACTION_VIEW, Uri.parse(perk_website));
-				startActivity(browserIntent);
+		if (null != perk_website) {
+			website_button.setOnClickListener(new OnClickListener() {
+	
+				@Override
+				public void onClick(View v) {
+					Intent browserIntent =  
+							new Intent(Intent.ACTION_VIEW, Uri.parse(perk_website));
+					startActivity(browserIntent);
+					
+				}
 				
-			}
-			
-		});
+			});
+		} else {
+			website_button.setVisibility(View.INVISIBLE);
+		}
+		
+		if (null != perk_coupon) {
+			coupon_button.setOnClickListener(new OnClickListener() {
+	
+				@Override
+				public void onClick(View v) {
+					Intent browserIntent =  
+							new Intent(Intent.ACTION_VIEW, Uri.parse(perk_coupon));
+					startActivity(browserIntent);
+					
+				}
+				
+			});
+		} else {
+			coupon_button.setVisibility(View.INVISIBLE);
+		}
 		
 //		String uri = "@drawable/" + perk_image + ".jpg";
 		int id = getResources().getIdentifier(perk_image, "drawable", this.getPackageName());
