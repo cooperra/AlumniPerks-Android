@@ -48,7 +48,7 @@ public class PerkStorage extends Activity {
 	
 	// Given a string representation of a URL, sets up a connection and gets
     // an input stream.
-    private static InputStream downloadUrl(String urlString) throws IOException, HttpResponseException {
+    private static InputStream openUrl(String urlString) throws IOException, HttpResponseException {
         URL url = new URL(urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setReadTimeout(10000 /* milliseconds */);
@@ -97,7 +97,7 @@ public class PerkStorage extends Activity {
     		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
     		if (networkInfo != null && networkInfo.isConnected()) {
     			// fetch data
-    			InputStream stream = downloadUrl("http://" + HOST + "/companyList.xml");
+    			InputStream stream = openUrl("http://" + HOST + "/companyList.xml");
     			saveXMLFile(stream);
     			return true;
     		} else {
@@ -107,22 +107,27 @@ public class PerkStorage extends Activity {
     	}
     	
 		private void saveXMLFile(InputStream stream) throws IOException {
+			saveToInternalStorage(stream, "companyList.xml");
+		}
+		
+		// Assumes that filename is valid
+		private void saveToInternalStorage(InputStream stream, String filename) throws IOException {
 			// Save in internal storage
 			FileOutputStream file;
 			try {
 				// save temp file
-				file = getCallingActivity().openFileOutput("companyList-temp.xml", MODE_PRIVATE);
+				file = getCallingActivity().openFileOutput(filename+"_downloading", MODE_PRIVATE);
 				copy(stream, file);
 				file.flush();
 				file.close();
 				
 				// rename temp file to actual file location
 				File filesDir = getCallingActivity().getFilesDir();
-				File fTemp = new File(filesDir, "companyList-temp.xml");
+				File fTemp = new File(filesDir, filename+"_downloading");
 				if (!fTemp.exists()) {
 					Log.wtf(PerkStorage.class.getSimpleName(), "New perk data file doesn't exist");
 				}
-				if (!fTemp.renameTo(new File(filesDir, "companyList.xml"))) {
+				if (!fTemp.renameTo(new File(filesDir, filename))) {
 					Log.wtf(PerkStorage.class.getSimpleName(), "Couldn't rename perk data file");
 				}
 			} catch (FileNotFoundException e) {
