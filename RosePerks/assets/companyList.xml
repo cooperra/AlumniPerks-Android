@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <companyList>
-    <company>
-        <id>32</id>
+    <company id="32">
         <name>7 &amp; 70 Liquor &amp; World of Wines </name>
         <category>entertainment</category>
         <location>3305 S. 7th Street Terre Haute, IN 47802</location>
@@ -9,8 +8,7 @@
         <discount>Discount of 10% off 1/2 case of wine or 15% off a full case of wine; Mix &amp; match is acceptable</discount>
         <name_image>32.jpg</name_image>
     </company>        
-    <company>
-        <id>1</id>
+    <company id ="1">
         <name>Asics</name>
         <category>store</category>
         <location>Location: Through Alumni Affairs</location>
@@ -19,8 +17,7 @@
         <name_image>1.jpg</name_image>
         <website>http://asicsamerica.com/</website>
     </company>
-    <company>
-        <id>2</id>
+    <company id ="2">
         <name>AVIS</name>
         <category>other</category>
         <location>2629 S. 3rd Street Terre Haute, IN 47802</location>
@@ -30,8 +27,7 @@
         <website>http://www.avis.com/</website>
         <coupon>http://www.rose-hulman.edu/Users/groups/AdminSvcs/html/TRAVEL/AVIS_Local_Market_Page.pdf</coupon>
     </company>
-    <company>
-        <id>3</id>
+    <company id ="3">
         <name>Candlewood Suites</name>
         <category>hotel</category>
         <location>721 Wabash Ave. Terre Haute, IN 47807</location>
@@ -40,8 +36,7 @@
         <name_image>3.jpg</name_image>
         <website>http://www.Candlewoodsuites.com/terrehautein</website>
     </company>
-    <company>
-        <id>4</id>
+   <company id ="4">
         <name>Clouse Landscaping</name>
         <category>store</category>
         <location>140 N. 36th Street Terre Haute, IN 47803</location>
@@ -50,8 +45,7 @@
         <name_image>4.jpg</name_image>
         <coupon>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/clouselandscapingbrochure1.pdf</coupon>
     </company>
-    <company>
-        <id>5</id>
+   <company id ="5">
         <name>Comfort Inn &amp; Suites-Plainfield</name>
         <category>hotel</category>
         <location>6107 Cambridge Way Plainfield, IN 46168</location>
@@ -61,8 +55,7 @@
         <website>http://www.comfortinn.com/</website>
         <coupon>http://www.rose-hulman.edu/Users/groups/AdminSvcs/html/TRAVEL/Comfort%20Inn%202013.pdf</coupon>
     </company>
-    <company>
-        <id>6</id>
+    <company id ="6">
         <name>Drury Inn-Terre Haute</name>
         <category>hotel</category>
         <location>3040 S. U.S. HWY 41 Terre Haute, IN 47802</location>
@@ -72,8 +65,7 @@
         <website>http://www.druryhotels.com/</website>
         <coupon>http://www.druryhotels.com/Reservations.aspx?Property=0088&amp;corpid=300226</coupon>
     </company>
-    <company>
-        <id>7</id>
+    <company id ="7">
         <name>Fifth Third Bank- Main</name>
         <category>banking</category>
         <location>350 Wabash Avenue Terre Haute, IN 47807</location>
@@ -83,8 +75,7 @@
         <website>https://www.53.com/site</website>
         <coupon>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/fifththird_page1.pdf</coupon>
     </company>
-    <company>
-        <id>8</id>
+    <company id ="8">
         <name>Grease Monkey</name>
         <category>store</category>
         <location>2501 Wabash Avenue Terre Haute, IN 47803</location>
@@ -93,8 +84,7 @@
         <name_image>8.jpg</name_image>
         <website>http://www.greasemonkeyterrehaute526.com/</website>
     </company>
-    <company>
-        <id>9</id>
+    <company id ="9">
         <name>Fast Park &amp; Relax</name>
         <category>other</category>
         <location>8550 Stansted Rd Indianapolis, IN 46241</location>
@@ -104,8 +94,7 @@
         <website>http://www.thefastpark.com/</website>
         <coupon>http://www.thefastpark.com/marketing/indianapolis/ts52corp.html</coupon>
     </company>
-    <company>
-        <id>10</id>
+    <company id ="10">
         <name>Firestone Tire &amp; Service Center</name>
         <category>store</category>
         <location>940 Wabash Avenue Terre Haute, IN 47807</location>
@@ -115,8 +104,7 @@
         <website>http://www.firestonecompleteautocare.com/</website>
         <coupon>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/firestonefx-0972_rose_hulman_alumni_ad.pdf</coupon>
     </company>
-    <company>
-        <id>11</id>
+    <company id ="11">
         <name>First Financial Bank-Main</name>
         <category>banking</category>
         <location>One First Financial Plaza Terre Haute, IN 47808</location>
@@ -126,8 +114,7 @@
         <website>https://www.first-online.com/</website>
         <coupon>http://rosestem.rose-hulman.edu/s/1554/images/editor_documents/firstfinancial--checks.pdf</coupon>
     </company>
-    <company>
-        <id>12</id>
+    <company id ="12">
         <name>Hampton Inn</name>
         <category>hotel</category>
         <location>3325 S. U.S. HWY 41 Terre Haute, IN 47802</location>
@@ -137,8 +124,7 @@
         <website>http://hamptoninn3.hilton.com/en/index.html</website>
         <coupon>https://secure3.hilton.com/en_US/hp/reservation/book.htm?ctyhocn=HUFHHHX&amp;corporateCode=560049206</coupon>
     </company>
-    <company>
-        <id>13</id>
+    <company id ="13">
         <name>Hilton Garden Inn, Terre Haute House</name>
         <category>hotel</category>
         <location>750 Wabash Avenue Terre Haute, IN 47807</location>
@@ -147,8 +133,7 @@
         <name_image>13.jpg</name_image>
         <website>http://hiltongardeninn3.hilton.com/en/index.html</website>
     </company>
-    <company>
-        <id>14</id>
+    <company id ="14">
         <name>Holiday Inn Express &amp; Suites</name>
         <category>hotel</category>
         <location>2645 Joe Fox Street Terre Haute, IN 47803</location>
@@ -157,8 +142,7 @@
         <name_image>14.jpg</name_image>
         <website>http://www.ihg.com/holidayinn/hotels/us/en/reservation</website>
     </company>
-    <company>
-        <id>15</id>
+    <company id ="15">
         <name>Holiday Inn of Terre Haute</name>
         <category>hotel</category>
         <location>3300 S. U.S. HWY 41 Terre Haute, IN 47802</location>
@@ -167,8 +151,7 @@
         <name_image>15.jpg</name_image>
         <website>http://www.holidayinn.com/hotels/us/en/terre-haute/hufin/hoteldetail?</website>
     </company>
-    <company>
-        <id>16</id>
+    <company id ="16">
         <name>Indy Park Ride &amp; Fly</name>
         <category>entertainment</category>
         <location>3875 Plainfield Road Indianapolis, IN 46231</location>
@@ -177,8 +160,7 @@
         <name_image>16.jpg</name_image>
         <website>https://www.indybizxpress.com/rose-hulman/</website>
     </company>
-    <company>
-        <id>17</id>
+    <company id ="17">
         <name>J. Ford's Black Angus, Inc.</name>
         <category>restaurant</category>
         <location>502 S. 3rd Street Terre Haute, IN 47807</location>
@@ -187,8 +169,7 @@
         <name_image>17.jpg</name_image>
         <website>http://jfordsblackangus.com/</website>
     </company>
-    <company>
-        <id>18</id>
+    <company id ="18">
         <name>LaQuinta Inns &amp; Suites-Plainfield</name>
         <category>hotel</category>
         <location>2251 Manchester Drive Plainfield, IN 46168</location>
@@ -198,8 +179,7 @@
         <website>http://www.lq.com/lq/index.jsp</website>
         <coupon>http://www.rose-hulman.edu/Users/groups/AdminSvcs/html/TRAVEL/Comfort Inn 2013.pdf</coupon>
     </company>     
-    <company>
-        <id>19</id>
+    <company id ="19">
         <name>Logan's Ribeye</name>
         <category>restaurant</category>
         <location>100 S. Fruitridge Avenue Terre Haute, IN 47803</location>
@@ -208,8 +188,7 @@
         <name_image>19.jpg</name_image>
         <website>http://logansribeye.net/</website>
     </company>     
-    <company>
-        <id>20</id>
+    <company id ="20">
         <name>M.Moggers Brewery</name>
         <category>entertainment</category>
         <location>908 Poplar Street Terre Haute, IN 47807</location>
@@ -218,8 +197,7 @@
         <name_image>20.jpg</name_image>
         <website>http://www.moggers-restaurant.com/our-menu/</website>
     </company>    
-    <company>
-        <id>21</id>
+    <company id ="21">
         <name>Pacesetter Sports</name>
         <category>store</category>
         <location>2831 S. 3rd Street Terre Haute, IN 47802</location>
@@ -228,8 +206,7 @@
         <name_image>21.jpg</name_image>
         <website>http://www.pacesettersports.com/</website>
     </company>      
-        <company>
-        <id>22</id>
+    <company id ="22">
         <name>Pear Tree Inn</name>
         <category>hotel</category>
         <location>3050 Highway 41 South Terre Haute, IN 47802</location>
@@ -239,8 +216,7 @@
         <website>https://wwws.druryhotels.com/</website>
         <coupon>http://www.druryhotels.com/Reservations.aspx?Property=0087&amp;corpid=300226</coupon>
     </company>     
-    <company>
-        <id>23</id>
+    <company id ="23">
         <name>Pizza Hut-Terre Haute</name>
         <category>restaurant</category>
         <location>3040 Wabash Avenue Terre Haute, IN 47803</location>
@@ -249,8 +225,7 @@
         <name_image>23.jpg</name_image>
         <website>http://www.pizzahut.com/</website>
     </company>     
-    <company>
-        <id>24</id>
+    <company id ="24">
         <name>Pizza Hut-Terre Haute</name>
         <category>restaurant</category>
         <location>2400 S. 3rd Street Terre Haute, IN 47803</location>
@@ -259,8 +234,7 @@
         <name_image>24.jpg</name_image>
         <website>http://www.pizzahut.com/</website>
     </company>
-    <company>
-        <id>25</id>
+    <company id ="25">
         <name>Pizza Hut-Terre Haute</name>
         <category>restaurant</category>
         <location>2001 Lafayette Avenue Terre Haute, IN 47803</location>
@@ -269,8 +243,7 @@
         <name_image>25.jpg</name_image>
         <website>http://www.pizzahut.com/</website>
     </company>
-    <company>
-        <id>26</id>
+    <company id ="26">
         <name>Pizza Hut-Terre Haute</name>
         <category>restaurant</category>
         <location>1301 Wabash Avenue Terre Haute, IN 47803</location>
@@ -279,8 +252,7 @@
         <name_image>26.jpg</name_image>
         <website>http://www.pizzahut.com/</website>
     </company>
-    <company>
-        <id>27</id>
+    <company id ="27">
         <name>Poplar Flower Shop</name>
         <category>store</category>
         <location>361 S. 18th Street Terre Haute, IN 47807</location>
@@ -289,8 +261,7 @@
         <name_image>27.jpg</name_image>
         <website>http://www.poplarflowershop.com/</website>
     </company> 
-    <company>
-        <id>30</id>
+    <company id ="30">
         <name>Quality Inn-Terre Haute</name>
         <category>hotel</category>
         <location>555 S. 3rd Street Terre Haute, IN 47807</location>
@@ -299,8 +270,7 @@
         <name_image>30.jpg</name_image>
         <website>http://www.qualityinn.com/</website>
     </company>      
-    <company>
-        <id>31</id>
+    <company id ="31">
         <name>Rick's Smokehouse &amp; Grill, LLC </name>
         <category>restaurant</category>
         <location>3102 Wabash Avenue Terre Haute, IN 47803</location>
@@ -309,8 +279,7 @@
         <name_image>31.jpg</name_image>
         <website>http://www.rickssmokehouse.com</website>
     </company>  
-    <company>
-        <id>28</id>
+    <company id ="28">
         <name>Springhill Suites Marriot </name>
         <category>hotel</category>
         <location>3304 US Hwy 41 South Terre Haute, IN 47802</location>
@@ -319,8 +288,7 @@
         <name_image>28.jpg</name_image>
         <website>http://www.marriott.com/hotels/travel/indst-springhill-suites-terre-haute/</website>
     </company>  
-    <company>
-        <id>29</id>
+    <company id ="29">
         <name>Stables Steakhouse </name>
         <category>restaurant</category>
         <location>939 Poplar Street Terre Haute, IN 47807</location>

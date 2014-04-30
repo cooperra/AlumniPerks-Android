@@ -54,14 +54,20 @@ public class PerkListXMLParser {
 
 					Node firstPerksNode = perksList.item(i);
 
+					try {
+						Log.d("HERPDERP", firstPerksNode.getNodeName());
+						Log.d("HERPDERP", "id="+((Element) firstPerksNode).getAttribute("id"));
+					} catch (Exception e) {
+						Log.d("HERPDERP", "uh oh "+e.getMessage());
+					} finally {
+						Log.d("HERPDERP", "grumble");
+					}
+					
 					// TODO: check for nulls that occur when fields are missing
 					Element firstPerksElement = (Element) firstPerksNode;
-					NodeList idList = firstPerksElement
-							.getElementsByTagName(KEY_ID);
-					Element firstIdElement = (Element) idList.item(0);
-					NodeList textIdList = firstIdElement.getChildNodes();
-					perk.setId(Long.parseLong( ((Node) textIdList.item(0)).getNodeValue()
-							.trim()) );
+					
+					String idString = firstPerksElement.getAttribute(KEY_ID);
+					perk.setId(Long.parseLong(idString));
 
 					NodeList nameList = firstPerksElement
 							.getElementsByTagName(KEY_NAME);
