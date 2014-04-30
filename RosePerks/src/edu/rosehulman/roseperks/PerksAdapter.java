@@ -1,8 +1,12 @@
 package edu.rosehulman.roseperks;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import android.app.Activity;
@@ -73,10 +77,14 @@ public class PerksAdapter extends BaseAdapter {
 		holder.tvdiscount.setText(perkListCollection.get(position).getPerkDescription());
 		
 		//Setting up the image
-		String uri = "drawable/"+ perkListCollection.get(position).getPerkImage();
-		int imageResource = vi.getContext().getApplicationContext().getResources().getIdentifier(
-		   uri, null, vi.getContext().getApplicationContext().getPackageName());
-		Drawable image = vi.getContext().getResources().getDrawable(imageResource);
+		Drawable image;
+		try {
+			String uri = vi.getContext().getFilesDir().getPath() + File.separator+ perkListCollection.get(position).getPerkImage();
+			image = Drawable.createFromPath(uri);
+		} catch (Exception e) {
+			Log.w(getClass().getSimpleName(), "Problem loading image", e);
+			image = vi.getContext().getResources().getDrawable(R.drawable.no_image);
+		}
 		holder.tvName_image.setImageDrawable(image);
 		return vi;
 	}

@@ -90,7 +90,9 @@ public class PerkUpdater extends Activity {
     			stream = getXMLFile(getContext());
     			List<Perk> retrievedPerks = PerkListXMLParser.parsePerkXML(stream);
     			for (Perk perk : retrievedPerks) {
-    				downloadImage(perk);
+    				if (downloadImage(perk)) {
+    					// TODO do something if image was downloaded
+    				}
     			}
     			return true;
     		} else {
@@ -99,13 +101,17 @@ public class PerkUpdater extends Activity {
     		}
     	}
     	
-		private void downloadImage(Perk perk) {
+    	// Returns true if image was downloaded and saved successfully
+		private boolean downloadImage(Perk perk) {
+			boolean wasSuccessful = false;
 			try {
 				String imageURL = perk.getPerkImage();
 				String fileExt = imageURL.substring(imageURL.length()-4, imageURL.length()); 
 				try {
-					InputStream imgStream = openUrl(imageURL);
+					assert !("".equals(imageURL));
+					InputStream imgStream = openUrl("http://" + HOST + "/images/" + imageURL);
 					saveToInternalStorage(imgStream, perk.getId() + fileExt);
+					wasSuccessful = true;
 				} catch (IOException e) {
 					e.printStackTrace();
 					Log.e(this.getClass().getSimpleName(), "Image failed to download or save for perk " + perk.getId());
@@ -117,6 +123,7 @@ public class PerkUpdater extends Activity {
 				e.printStackTrace();
 				Log.e(this.getClass().getSimpleName(), "Image failed to download for perk " + (perk != null ? perk.getId() : "NULL") + " for unanticipated reason", e);
 			}
+			return wasSuccessful;
 		}
 
 		private void saveXMLFile(InputStream stream) throws IOException {
