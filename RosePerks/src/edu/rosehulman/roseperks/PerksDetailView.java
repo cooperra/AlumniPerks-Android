@@ -1,9 +1,13 @@
 package edu.rosehulman.roseperks;
 
+import java.io.File;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -77,9 +81,18 @@ public class PerksDetailView extends Activity {
 			coupon_button.setVisibility(View.INVISIBLE);
 		}
 		
-//		String uri = "@drawable/" + perk_image + ".jpg";
-		int id = getResources().getIdentifier(perk_image, "drawable", this.getPackageName());
-//		Drawable res = getResources().getDrawable(id);
-		image.setImageResource(id);
+		// Setting up the image
+		Drawable imageDrawable;
+		try {
+			String uri = this.getApplicationContext().getFilesDir().getPath()
+					+ File.separator
+					+ perk_image;
+			imageDrawable = Drawable.createFromPath(uri);
+		} catch (Exception e) {
+			Log.w(getClass().getSimpleName(), "Problem loading image", e);
+			imageDrawable = this.getApplicationContext().getResources()
+					.getDrawable(R.drawable.no_image);
+		}
+		image.setImageDrawable(imageDrawable);
 	}
 }
