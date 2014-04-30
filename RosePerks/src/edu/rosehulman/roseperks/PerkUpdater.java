@@ -105,12 +105,13 @@ public class PerkUpdater extends Activity {
 		private boolean downloadImage(Perk perk) {
 			boolean wasSuccessful = false;
 			try {
-				String imageURL = perk.getPerkImage();
-				String fileExt = imageURL.substring(imageURL.length()-4, imageURL.length()); 
+				String fileExt = ".jpg";
+				String filename =  perk.getId()+fileExt;
+				String imageURL = "http://" + HOST + "/images/" + filename;
 				try {
-					assert !("".equals(imageURL));
-					InputStream imgStream = openUrl("http://" + HOST + "/images/" + imageURL);
-					saveToInternalStorage(imgStream, perk.getId() + fileExt);
+					assert !("".equals(filename));
+					InputStream imgStream = openUrl(imageURL);
+					saveToInternalStorage(imgStream, filename);
 					wasSuccessful = true;
 				} catch (IOException e) {
 					e.printStackTrace();

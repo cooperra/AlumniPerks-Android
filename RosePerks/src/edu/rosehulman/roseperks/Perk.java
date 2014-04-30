@@ -6,7 +6,6 @@ public class Perk {
 	private String company_address;
 	private String company_phone;
 	private String perk_description;
-	private String perk_image;
 	private String perk_website;
 	private String perk_category;
 	private String perk_coupon;
@@ -52,11 +51,7 @@ public class Perk {
 	}
 
 	public String getPerkImage() {
-		return perk_image;
-	}
-
-	public void setPerkImage(String perk_image) {
-		this.perk_image = perk_image;
+		return id + ".jpg";
 	}
 
 	public String getPerkWebsite() {

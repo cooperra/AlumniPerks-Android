@@ -21,7 +21,6 @@ public class PerkListXMLParser {
 	static final String KEY_LOCATION = "location";
 	static final String KEY_NUMBER = "number";
 	static final String KEY_DISCOUNT = "discount";
-	static final String KEY_NAME_IMAGE = "name_image";
 	static final String KEY_WEBSITE = "website";
 	static final String KEY_CATEGORY = "category";
 	static final String KEY_COUPON = "coupon";
@@ -108,13 +107,6 @@ public class PerkListXMLParser {
 					NodeList textDiscountList = firstDiscountElement
 							.getChildNodes();
 					perk.setPerkDescription( ((Node) textDiscountList.item(0))
-							.getNodeValue().trim());
-
-					NodeList imageList = firstPerksElement
-							.getElementsByTagName(KEY_NAME_IMAGE);
-					Element firstImageElement = (Element) imageList.item(0);
-					NodeList textImageList = firstImageElement.getChildNodes();
-					perk.setPerkImage( ((Node) textImageList.item(0))
 							.getNodeValue().trim());
 					
 					NodeList websiteList = firstPerksElement
