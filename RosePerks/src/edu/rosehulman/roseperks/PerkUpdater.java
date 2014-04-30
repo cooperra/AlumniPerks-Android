@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
@@ -85,7 +86,12 @@ public class PerkUpdater extends Activity {
     		if (networkInfo != null && networkInfo.isConnected()) {
     			// fetch data
     			InputStream stream = openUrl("http://" + HOST + "/companyList.xml");
-    			saveXMLFile(stream);
+    			saveXMLFile(stream); // TODO remove when switching to SQL
+    			stream = getXMLFile(getContext());
+    			List<Perk> retrievedPerks = PerkListXMLParser.parsePerkXML(stream);
+    			for (Perk perk : retrievedPerks) {
+    				downloadImage(perk);
+    			}
     			return true;
     		} else {
     			// display error
@@ -93,6 +99,26 @@ public class PerkUpdater extends Activity {
     		}
     	}
     	
+		private void downloadImage(Perk perk) {
+			try {
+				String imageURL = perk.getPerkImage();
+				String fileExt = imageURL.substring(imageURL.length()-4, imageURL.length()); 
+				try {
+					InputStream imgStream = openUrl(imageURL);
+					saveToInternalStorage(imgStream, perk.getId() + fileExt);
+				} catch (IOException e) {
+					e.printStackTrace();
+					Log.e(this.getClass().getSimpleName(), "Image failed to download or save for perk " + perk.getId());
+				} catch (HttpResponseException e) {
+					e.printStackTrace();
+					Log.e(this.getClass().getSimpleName(), "Image failed to download for perk " + perk.getId(), e);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				Log.e(this.getClass().getSimpleName(), "Image failed to download for perk " + (perk != null ? perk.getId() : "NULL") + " for unanticipated reason", e);
+			}
+		}
+
 		private void saveXMLFile(InputStream stream) throws IOException {
 			saveToInternalStorage(stream, "companyList.xml");
 		}
