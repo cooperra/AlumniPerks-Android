@@ -26,9 +26,9 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
-import edu.rosehulman.roseperks.PerkStorage.HttpResponseException;
-import edu.rosehulman.roseperks.PerkStorage.NetworkDisconnectedException;
-import edu.rosehulman.roseperks.PerkStorage.PerkUpdateTask;
+import edu.rosehulman.roseperks.PerkUpdater.HttpResponseException;
+import edu.rosehulman.roseperks.PerkUpdater.NetworkDisconnectedException;
+import edu.rosehulman.roseperks.PerkUpdater.PerkUpdateTask;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -44,6 +44,7 @@ import android.widget.Toast;
 public class PerksListView extends Activity {
 
 	ListView list;
+	PerkDataSource pds;
 	PerksAdapter adapter;
 	List<Perk> perksListCollection;
 	private String categoryFilter;
@@ -60,7 +61,8 @@ public class PerksListView extends Activity {
 			this.setTitle(categoryFilter);
 		}
 
-	    if (PerkStorage.isEmpty(this)) {
+		this.pds = new PerkDataSource(this);
+	    if (pds.isEmpty()) {
 	    	// attempt to refresh perks
 	    	startPerkRefresh();
 	    	// TODO: assume that it didn't work show retry button
@@ -82,7 +84,7 @@ public class PerksListView extends Activity {
 		// TODO: don't update if update already in progress
 		final Activity thiss = this;
 		
-		PerkUpdateTask updater = new PerkStorage.PerkUpdateTask() {
+		PerkUpdateTask updater = new PerkUpdater.PerkUpdateTask() {
 			
 			@Override
 			public Activity getCallingActivity() {
@@ -145,7 +147,6 @@ public class PerksListView extends Activity {
 	 * Populates the ListView with perks from the XML
 	 */
 	private void loadPerks() {
-		PerkDataSource pds = new PerkDataSource(this);
 		ArrayList<Perk> perkList = pds.getAllPerksViaXML();
 		if (perkList == null) {
 			return;

@@ -59,7 +59,7 @@ public class PerkDataSource {
 	}
 
 	public ArrayList<Perk> getAllPerksViaXML() {
-		InputStream stream = PerkStorage.getXMLFile(context);
+		InputStream stream = PerkUpdater.getXMLFile(context);
 		if (stream == null) {
 			Log.e(PerksListView.class.getSimpleName(), "File not found");
 			return null;
@@ -93,5 +93,17 @@ public class PerkDataSource {
 		perk.setCompanyPhone(cursor.getString(3));
 		perk.setPerkDescription(cursor.getString(4));
 		return perk;
+	}
+	
+	public boolean isEmpty() {
+		// TODO change to SQL
+		// Check to see if file exists in internal storage
+		for (String filename : this.context.fileList()) {
+			Log.d(PerkUpdater.class.getSimpleName(), "File exists: \"" + filename + "\"");
+			if (filename.equals("companyList.xml")) {
+				return false;
+			}
+		}
+		return true;
 	}
 }

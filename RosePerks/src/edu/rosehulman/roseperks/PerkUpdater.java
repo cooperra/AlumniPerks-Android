@@ -16,21 +16,8 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class PerkStorage extends Activity {
+public class PerkUpdater extends Activity {
 	final static String HOST = "alumniperks.csse.rose-hulman.edu";
-	
-	
-
-	public static boolean isEmpty(Activity callingActivity) {
-		// Check to see if file exists in internal storage
-		for (String filename : callingActivity.fileList()) {
-			Log.d(PerkStorage.class.getSimpleName(), "File exists: \"" + filename + "\"");
-			if (filename.equals("companyList.xml")) {
-				return false;
-			}
-		}
-		return true;
-	}
 
 	/**
 	 * 
@@ -125,13 +112,13 @@ public class PerkStorage extends Activity {
 				File filesDir = getCallingActivity().getFilesDir();
 				File fTemp = new File(filesDir, filename+"_downloading");
 				if (!fTemp.exists()) {
-					Log.wtf(PerkStorage.class.getSimpleName(), "New perk data file doesn't exist");
+					Log.wtf(PerkUpdater.class.getSimpleName(), "New perk data file doesn't exist");
 				}
 				if (!fTemp.renameTo(new File(filesDir, filename))) {
-					Log.wtf(PerkStorage.class.getSimpleName(), "Couldn't rename perk data file");
+					Log.wtf(PerkUpdater.class.getSimpleName(), "Couldn't rename perk data file");
 				}
 			} catch (FileNotFoundException e) {
-				Log.wtf(PerkStorage.class.getSimpleName(), "Internal storage issue", e);
+				Log.wtf(PerkUpdater.class.getSimpleName(), "Internal storage issue", e);
 				e.printStackTrace();
 			}
 		}
@@ -147,7 +134,7 @@ public class PerkStorage extends Activity {
 			}
 			in.close();
 			
-			Log.i(PerkStorage.class.getSimpleName(), "Downloaded and saved " + bytecounter + " bytes");
+			Log.i(PerkUpdater.class.getSimpleName(), "Downloaded and saved " + bytecounter + " bytes");
 		}
 
 		@Override
@@ -173,17 +160,17 @@ public class PerkStorage extends Activity {
 		public abstract Activity getCallingActivity();
 		
 		public void onNetworkProblem(IOException e) {
-			Log.e(PerkStorage.class.getSimpleName(), "Something went wrong while downloading perk data.", e);
+			Log.e(PerkUpdater.class.getSimpleName(), "Something went wrong while downloading perk data.", e);
 			e.printStackTrace();
 		}
 		
 		public void onNonOKHttpResponse(HttpResponseException e) {
-			Log.e(PerkStorage.class.getSimpleName(), "Perk server returned unusual resonse: " + e.code + ": " + e.message);
+			Log.e(PerkUpdater.class.getSimpleName(), "Perk server returned unusual resonse: " + e.code + ": " + e.message);
 			e.printStackTrace();
 		}
 
 		public void onNoConnection(NetworkDisconnectedException e) {
-			Log.d(PerkStorage.class.getSimpleName(), "Perk update attempted while network disconnected.");
+			Log.d(PerkUpdater.class.getSimpleName(), "Perk update attempted while network disconnected.");
 			e.printStackTrace();
 		}
 		
@@ -202,7 +189,7 @@ public class PerkStorage extends Activity {
 				break;
 			}
 			if (result) {
-				Log.d(PerkStorage.class.getSimpleName(), "Perk update successful.");
+				Log.d(PerkUpdater.class.getSimpleName(), "Perk update successful.");
 			}
 		}
     }
