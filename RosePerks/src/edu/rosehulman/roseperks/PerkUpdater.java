@@ -80,7 +80,7 @@ public class PerkUpdater extends Activity {
     	 * @throws NetworkDisconnectedException when there is no network connection
     	 */
     	private boolean update() throws IOException, HttpResponseException, NetworkDisconnectedException {
-    		ConnectivityManager connMgr = (ConnectivityManager) getCallingActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+    		ConnectivityManager connMgr = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
     		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
     		if (networkInfo != null && networkInfo.isConnected()) {
     			// fetch data
@@ -103,13 +103,13 @@ public class PerkUpdater extends Activity {
 			FileOutputStream file;
 			try {
 				// save temp file
-				file = getCallingActivity().openFileOutput(filename+"_downloading", MODE_PRIVATE);
+				file = getContext().openFileOutput(filename+"_downloading", MODE_PRIVATE);
 				copy(stream, file);
 				file.flush();
 				file.close();
 				
 				// rename temp file to actual file location
-				File filesDir = getCallingActivity().getFilesDir();
+				File filesDir = getContext().getFilesDir();
 				File fTemp = new File(filesDir, filename+"_downloading");
 				if (!fTemp.exists()) {
 					Log.wtf(PerkUpdater.class.getSimpleName(), "New perk data file doesn't exist");
@@ -157,7 +157,7 @@ public class PerkUpdater extends Activity {
 			return success;
 		}
     	
-		public abstract Activity getCallingActivity();
+		public abstract Context getContext();
 		
 		public void onNetworkProblem(IOException e) {
 			Log.e(PerkUpdater.class.getSimpleName(), "Something went wrong while downloading perk data.", e);

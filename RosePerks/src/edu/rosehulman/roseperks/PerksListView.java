@@ -29,6 +29,7 @@ import org.xml.sax.SAXException;
 import edu.rosehulman.roseperks.PerkUpdater.HttpResponseException;
 import edu.rosehulman.roseperks.PerkUpdater.NetworkDisconnectedException;
 import edu.rosehulman.roseperks.PerkUpdater.PerkUpdateTask;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -87,7 +88,7 @@ public class PerksListView extends Activity {
 		PerkUpdateTask updater = new PerkUpdater.PerkUpdateTask() {
 			
 			@Override
-			public Activity getCallingActivity() {
+			public Context getContext() {
 				return thiss;
 			}
 
