@@ -10,7 +10,6 @@ import android.widget.ImageButton;
 
 public class CategoryListActivity extends Activity {
 	private ImageButton Restaurant;
-	private ImageButton Entertainment;
 	private ImageButton Hotel;
 	private ImageButton Banking;
 	private ImageButton Stores;
