@@ -1,6 +1,5 @@
 package edu.rosehulman.roseperks;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;

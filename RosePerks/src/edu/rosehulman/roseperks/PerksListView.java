@@ -2,38 +2,16 @@ package edu.rosehulman.roseperks;
 
 import android.app.Activity;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.apache.http.util.ByteArrayBuffer;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
 
 import edu.rosehulman.roseperks.PerkUpdater.HttpResponseException;
 import edu.rosehulman.roseperks.PerkUpdater.NetworkDisconnectedException;
 import edu.rosehulman.roseperks.PerkUpdater.PerkUpdateTask;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
