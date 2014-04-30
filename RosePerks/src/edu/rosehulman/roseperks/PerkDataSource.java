@@ -1,13 +1,14 @@
 package edu.rosehulman.roseperks;
 
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class PerkDataSource {
 	// Database fields
@@ -18,9 +19,11 @@ public class PerkDataSource {
 			PerkDataHelper.COLUMN_ADDRESS, 
 			PerkDataHelper.COLUMN_PHONE, 
 			PerkDataHelper.COLUMN_DESCRIPTION };
+	private Context context; //TODO remove
 
 	public PerkDataSource(Context context) {
 		dbHelper = new PerkDataHelper(context);
+		this.context = context; // TODO remove
 	}
 
 	public void open() throws SQLException {
@@ -55,8 +58,18 @@ public class PerkDataSource {
 				+ " = " + id, null);
 	}
 
-	public List<Perk> getAllPerks() {
-		List<Perk> perks = new ArrayList<Perk>();
+	public ArrayList<Perk> getAllPerksViaXML() {
+		InputStream stream = PerkStorage.getXMLFile(context);
+		if (stream == null) {
+			Log.e(PerksListView.class.getSimpleName(), "File not found");
+			return null;
+		}
+		return PerkListXMLParser.parsePerkXML(stream);
+	}
+	
+	//TODO use this method instead of the other one
+	public ArrayList<Perk> getAllPerks() {
+		ArrayList<Perk> perks = new ArrayList<Perk>();
 
 		Cursor cursor = database.query(PerkDataHelper.TABLE_NAME,
 				allColumns, null, null, null, null, null);

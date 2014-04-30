@@ -37,9 +37,9 @@ public class PerkStorage extends Activity {
 	 * @return Returns an input stream from the XML file containing perk data.
 	 * Returns null when there is no file. 
 	 */
-	public static FileInputStream getXMLFile(Activity callingActivity) {
+	public static FileInputStream getXMLFile(Context context) {
 		try {
-			return callingActivity.openFileInput("companyList.xml");
+			return context.openFileInput("companyList.xml");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			return null;
