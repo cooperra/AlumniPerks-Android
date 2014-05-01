@@ -4,6 +4,7 @@ import java.io.File;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -48,6 +49,23 @@ public class PerksDetailView extends Activity {
 		
 		int perk_background = getResources().getIdentifier(perk_category, "drawable", this.getPackageName());
 		background.setBackgroundResource(perk_background);
+		
+		if (perk_category.equals("hotel")){
+			name.setTextColor(Color.WHITE);
+			location.setTextColor(Color.WHITE);
+			number.setTextColor(Color.WHITE);
+			discount.setTextColor(Color.WHITE);
+		}
+		
+//		if (perk_category.equals("other")){
+//			name.setTextColor(Color.WHITE);
+//			location.setTextColor(Color.WHITE);
+//			number.setTextColor(Color.WHITE);
+//			discount.setTextColor(Color.WHITE);
+//		}
+		
+		
+		
 		
 		if (null != perk_website) {
 			website_button.setOnClickListener(new OnClickListener() {
