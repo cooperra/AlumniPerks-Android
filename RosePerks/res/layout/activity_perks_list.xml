@@ -19,7 +19,7 @@
             android:id="@+id/name_image"
             android:layout_width="50dip"
             android:layout_height="50dip"
-            android:src="@drawable/caboodle_cupcakes"/>
+            android:src="@drawable/no_image"/>
  
     </LinearLayout>
  

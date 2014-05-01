@@ -12,7 +12,7 @@
         android:layout_gravity="center"
         android:paddingBottom="30dp"
         android:layout_marginTop="40dp"
-        android:src="@drawable/asics" />
+        android:src="@drawable/no_image" />
 
     <TextView
         android:id="@+id/perk_name_detail"
