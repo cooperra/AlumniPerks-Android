@@ -57,12 +57,12 @@ public class PerksDetailView extends Activity {
 			discount.setTextColor(Color.WHITE);
 		}
 		
-//		if (perk_category.equals("other")){
-//			name.setTextColor(Color.WHITE);
-//			location.setTextColor(Color.WHITE);
-//			number.setTextColor(Color.WHITE);
-//			discount.setTextColor(Color.WHITE);
-//		}
+		if (perk_category.equals("other")){
+			name.setTextColor(Color.WHITE);
+			location.setTextColor(Color.WHITE);
+			number.setTextColor(Color.WHITE);
+			discount.setTextColor(Color.WHITE);
+		}
 		
 		
 		
