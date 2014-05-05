@@ -20,14 +20,6 @@
             android:background="@null"
             android:src="@drawable/category_129091_simple_red_square_icon_food_beverage_knife_fork2" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
         <ImageButton
             android:id="@+id/hotel_cat"
             android:layout_width="0dip"
@@ -36,6 +28,13 @@
             android:scaleType="centerInside"
             android:background="@null"
             android:src="@drawable/category_129300_simple_red_square_icon_people_things_bed1_sc43" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
 
         <ImageButton
             android:id="@+id/banking_cat"
