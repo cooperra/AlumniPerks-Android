@@ -37,13 +37,13 @@
         android:orientation="horizontal" >
 
         <ImageButton
-            android:id="@+id/banking_cat"
+            android:id="@+id/entertainment_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
             android:background="@null"
-            android:src="@drawable/category_128579_simple_red_square_icon_business_dollar_solid" />
+            android:src="@drawable/category_remote" />
     </LinearLayout>
 
     <LinearLayout
