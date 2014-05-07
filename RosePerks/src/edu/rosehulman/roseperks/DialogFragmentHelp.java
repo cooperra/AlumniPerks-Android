@@ -12,7 +12,7 @@ public class DialogFragmentHelp extends DialogFragment {
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		AlertDialog.Builder aboutMessage = new AlertDialog.Builder(getActivity());
 		aboutMessage.setTitle(R.string.help_title);
-		aboutMessage.setIcon(R.drawable.question_mark_icon);
+		aboutMessage.setIcon(R.drawable.btn_help);
 		aboutMessage.setMessage(R.string.help_message);
 		aboutMessage.setPositiveButton(R.string.ok,
 				new DialogInterface.OnClickListener() {
