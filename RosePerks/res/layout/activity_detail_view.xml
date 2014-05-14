@@ -37,8 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:paddingBottom="20dp"
-        android:text="TextView" />
-
+        android:autoLink="all"
+        android:text="TextView"  />
+	
     <TextView
         android:id="@+id/perk_discount_detail"
         android:layout_width="wrap_content"
@@ -54,20 +55,23 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:layout_gravity="center">
+    
     <Button
         android:id="@+id/perk_website_detail"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingBottom="20dp"
-        android:text="More Detail" />
+        android:paddingRight="30dp"
+        android:layout_marginRight = "20dp"
+        style="@style/lightboxButton.Grey"
+        android:text="Details" />
     
     <Button
         android:id="@+id/perk_coupon_detail"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingBottom="20dp"
+        style="@style/lightboxButton.Grey"
         android:text="Coupon" />
     </LinearLayout>
 

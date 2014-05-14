@@ -37,6 +37,12 @@
             android:parentActivityName="edu.rosehulman.roseperks.MainScreenActivity" >
         </activity>
         <activity
+            android:name="edu.rosehulman.roseperks.ContactDialogView"
+            android:label="@string/help_title"
+            android:theme="@android:style/Theme.Dialog">
+            
+        </activity>
+        <activity
             android:name="edu.rosehulman.roseperks.RestaurantListView"
             android:label="@string/title_activity_restaurant_list"
             android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >

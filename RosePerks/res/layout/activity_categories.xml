@@ -37,13 +37,13 @@
         android:orientation="horizontal" >
 
         <ImageButton
-            android:id="@+id/entertainment_cat"
+            android:id="@+id/car_cat"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="centerInside"
             android:background="@null"
-            android:src="@drawable/category_remote" />
+            android:src="@drawable/category_car" />
     </LinearLayout>
 
     <LinearLayout

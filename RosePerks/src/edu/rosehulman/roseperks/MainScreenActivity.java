@@ -50,8 +50,9 @@ public class MainScreenActivity extends FragmentActivity {
 			
 			@Override
 			public void onClick(View v) {
-				DialogFragment dialog = new DialogFragmentHelp();
-				dialog.show(getSupportFragmentManager(), "help");
+				Intent ContactView = new Intent(getApplicationContext(),
+						ContactDialogView.class);
+				startActivity(ContactView);
 
 			}
 		});

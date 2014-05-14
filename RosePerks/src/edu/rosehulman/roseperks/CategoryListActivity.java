@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 public class CategoryListActivity extends Activity {
 	private ImageButton Restaurant;
 	private ImageButton Hotel;
-	private ImageButton Entertainment;
+	private ImageButton Car;
 	private ImageButton Stores;
 	private ImageButton Other;
 	
@@ -21,7 +21,7 @@ public class CategoryListActivity extends Activity {
 		setContentView(R.layout.activity_categories);
 		Restaurant = (ImageButton) findViewById(R.id.restaurant_cat);
 		Hotel = (ImageButton) findViewById(R.id.hotel_cat);
-		Entertainment = (ImageButton) findViewById(R.id.entertainment_cat);
+		Car = (ImageButton) findViewById(R.id.car_cat);
 		Stores = (ImageButton) findViewById(R.id.stores_cat);
 		Other = (ImageButton) findViewById(R.id.other_cat);
 		
@@ -49,13 +49,13 @@ public class CategoryListActivity extends Activity {
 			}
 		});
 		
-		Entertainment.setOnClickListener(new OnClickListener() {
+		Car.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				Intent bankingView = new Intent(getApplicationContext(),
 						PerksListView.class);
-				bankingView.putExtra("category", "entertainment");
+				bankingView.putExtra("category", "car");
 				startActivity(bankingView);
 				
 			}
