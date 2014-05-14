@@ -2,7 +2,7 @@
 <companyList>
     <company id="32">
         <name>7 &amp; 70 Liquor &amp; World of Wines </name>
-        <category>entertainment</category>
+        <category>other</category>
         <location>3305 S. 7th Street Terre Haute, IN 47802</location>
         <number>(812) 232-3003</number>
         <discount>Discount of 10% off 1/2 case of wine or 15% off a full case of wine; Mix &amp; match is acceptable</discount>
@@ -17,7 +17,7 @@
     </company>
     <company id ="2">
         <name>AVIS</name>
-        <category>other</category>
+        <category>car</category>
         <location>2629 S. 3rd Street Terre Haute, IN 47802</location>
         <number>(812) 238-9963</number>
         <discount>Discounts depend on car rentals and length of rental</discount>
@@ -34,7 +34,7 @@
     </company>
    <company id ="4">
         <name>Clouse Landscaping</name>
-        <category>store</category>
+        <category>other</category>
         <location>140 N. 36th Street Terre Haute, IN 47803</location>
         <number>(812) 240-0629</number>
         <discount>Free estimates, 10% off materials, 15% off labor costs</discount>
@@ -69,7 +69,7 @@
     </company>
     <company id ="8">
         <name>Grease Monkey</name>
-        <category>store</category>
+        <category>car</category>
         <location>2501 Wabash Avenue Terre Haute, IN 47803</location>
         <number>(812) 234-5448</number>
         <discount>Discount of $3.00 off any oil change</discount>
@@ -77,7 +77,7 @@
     </company>
     <company id ="9">
         <name>Fast Park &amp; Relax</name>
-        <category>other</category>
+        <category>car</category>
         <location>8550 Stansted Rd Indianapolis, IN 46241</location>
         <number>(317) 241-7275</number>
         <discount>Use Promo Code: 1752207 and Company Name:Rose-Hulman</discount>
@@ -135,14 +135,6 @@
         <discount>Room rate of $89.00</discount>
         <website>http://www.holidayinn.com/hotels/us/en/terre-haute/hufin/hoteldetail?</website>
     </company>
-    <company id ="16">
-        <name>Indy Park Ride &amp; Fly</name>
-        <category>entertainment</category>
-        <location>3875 Plainfield Road Indianapolis, IN 46231</location>
-        <number>(317) 486-8000</number>
-        <discount>Use promo code: 1752207 and company name: Rose-Hulman</discount>
-        <website>https://www.indybizxpress.com/rose-hulman/</website>
-    </company>
     <company id ="17">
         <name>J. Ford's Black Angus, Inc.</name>
         <category>restaurant</category>
@@ -170,7 +162,7 @@
     </company>     
     <company id ="20">
         <name>M.Moggers Brewery</name>
-        <category>entertainment</category>
+        <category>restaurant</category>
         <location>908 Poplar Street Terre Haute, IN 47807</location>
         <number>(812) 234-9202</number>
         <discount>10% discount</discount>
