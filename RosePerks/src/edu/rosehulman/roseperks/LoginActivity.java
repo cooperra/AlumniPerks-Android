@@ -228,7 +228,7 @@ public class LoginActivity extends Activity {
 				launchMainActivity();
 				return true;
 			}
-			return true;
+			return false;
 		}
 
 		private void saveSessionKey(String key) {
