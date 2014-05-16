@@ -83,11 +83,6 @@
             android:parentActivityName="edu.rosehulman.roseperks.MainScreenActivity" >
         </activity>
         <activity android:name="edu.rosehulman.roseperks.TestDatabaseActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
