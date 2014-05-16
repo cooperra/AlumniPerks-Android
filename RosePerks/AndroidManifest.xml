@@ -43,36 +43,6 @@
             
         </activity>
         <activity
-            android:name="edu.rosehulman.roseperks.RestaurantListView"
-            android:label="@string/title_activity_restaurant_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
-        </activity>
-        <activity
-            android:name="edu.rosehulman.roseperks.EntertainmentListView"
-            android:label="@string/title_activity_entertainment_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
-        </activity>
-        <activity
-            android:name="edu.rosehulman.roseperks.HotelListView"
-            android:label="@string/title_activity_hotel_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
-        </activity>
-        <activity
-            android:name="edu.rosehulman.roseperks.BankingListView"
-            android:label="@string/title_activity_banking_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
-        </activity>
-        <activity
-            android:name="edu.rosehulman.roseperks.StoresListView"
-            android:label="@string/title_activity_stores_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
-        </activity>
-        <activity
-            android:name="edu.rosehulman.roseperks.OtherListView"
-            android:label="@string/title_activity_other_list"
-            android:parentActivityName="edu.rosehulman.roseperks.CategoryListActivity" >
-        </activity>
-        <activity
             android:name="edu.rosehulman.roseperks.PerksDetailView"
             android:label="@string/title_activity_detail_list"
             android:parentActivityName="edu.rosehulman.roseperks.PerksListView" >
