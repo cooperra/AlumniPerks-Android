@@ -171,6 +171,7 @@ public class PerksListView extends Activity {
 				i.putExtra("image", image);
 				i.putExtra("category", category);
 				i.putExtra("coupon", coupon);
+				i.putExtra("calledFromPerksList", true);
 				
 				startActivity(i);
 				

@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -113,5 +114,18 @@ public class PerksDetailView extends Activity {
 					.getDrawable(R.drawable.no_image);
 		}
 		image.setImageDrawable(imageDrawable);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			if (getIntent().getBooleanExtra("calledFromPerksList", false)) {
+				finish();
+				return true;
+			}
+		}
+
+        return super.onOptionsItemSelected(item);
 	}
 }
