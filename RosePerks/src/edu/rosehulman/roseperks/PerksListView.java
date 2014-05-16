@@ -27,6 +27,7 @@ public class PerksListView extends Activity {
 	PerksAdapter adapter;
 	List<Perk> perksListCollection;
 	private String categoryFilter;
+	private MenuItem mRefresh;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -183,12 +184,18 @@ public class PerksListView extends Activity {
 	}
 
 	protected void showProgressView() {
-		// TODO Auto-generated method stub
+		if (mRefresh != null) {
+			mRefresh.setEnabled(false);
+			mRefresh.setActionView(R.layout.actionbar_indeterminate_progress);
+		}
 		
 	}
 
 	protected void hideProgressView() {
-		// TODO Auto-generated method stub
+		if (mRefresh != null) {
+			mRefresh.setEnabled(true);
+			mRefresh.setActionView(null);
+		}
 		
 	}
 
@@ -205,6 +212,7 @@ public class PerksListView extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.perks_list, menu);
+		mRefresh = menu.findItem(R.id.action_refresh);
 		return true;
 	}
 }
