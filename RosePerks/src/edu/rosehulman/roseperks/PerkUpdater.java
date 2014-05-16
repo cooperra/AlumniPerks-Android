@@ -19,6 +19,7 @@ import android.util.Log;
 
 public class PerkUpdater extends Activity {
 	final static String HOST = "alumniperks.csse.rose-hulman.edu";
+	final static String PERK_LIST_URL = "http://" + HOST + "/perk_api/list_all";
 
 	/**
 	 * 
@@ -85,7 +86,7 @@ public class PerkUpdater extends Activity {
     		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
     		if (networkInfo != null && networkInfo.isConnected()) {
     			// fetch data
-    			InputStream stream = openUrl("http://" + HOST + "/companyList.xml");
+    			InputStream stream = openUrl(PERK_LIST_URL);
     			saveXMLFile(stream); // TODO remove when switching to SQL
     			stream = getXMLFile(getContext());
     			List<Perk> retrievedPerks = PerkListXMLParser.parsePerkXML(stream);
