@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.SpannableString;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -57,7 +58,7 @@ public class PerksDetailView extends Activity {
 			discount.setTextColor(Color.WHITE);
 		}
 		
-		if (perk_category.equals("other")){
+		if (perk_category.equals("car")){
 			name.setTextColor(Color.WHITE);
 			location.setTextColor(Color.WHITE);
 			number.setTextColor(Color.WHITE);
