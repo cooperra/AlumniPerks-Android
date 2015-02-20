@@ -61,7 +61,7 @@ public class MainScreenActivity extends FragmentActivity {
 			@Override
 			public void onClick(View v) {
 				Intent browserIntent =  
-						new Intent(Intent.ACTION_VIEW, Uri.parse("https://mapsengine.google.com/map/u/0/edit?mid=zRBarr6eawLk.kMs2XUUHErnM"));
+						new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/d/viewer?mid=zdyo3q75qKzI.kj-j0aR-b6nU"));
 				startActivity(browserIntent);
 				
 			}
